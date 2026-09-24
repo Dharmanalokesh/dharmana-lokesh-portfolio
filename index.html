@@ -3,113 +3,141 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dharmana Lokesh | Data Analyst Portfolio (SQL, Python, Power BI, Excel)</title>
-  <meta name="description" content="Portfolio of Dharmana Lokesh - 2026 B.Tech Data Analyst specializing in SQL, Python, Power BI, and Excel. Proven experience through 2 internships and 4 end-to-end data analytics projects.">
-  <meta name="keywords" content="Dharmana Lokesh, Data Analyst, Fresher Data Analyst, SQL, MySQL, Python, Pandas, Power BI, DAX, Excel, Data Analytics Portfolio, AWS">
+  <title>Dharmana Lokesh | Data Analyst — Futuristic 3D Portfolio</title>
+  <meta name="description" content="Official 3D Portfolio of Dharmana Lokesh — 2026 B.Tech Data Analyst specializing in SQL, Python, Power BI, and Excel. Backed by 2 internships and 4 end-to-end data analytics projects.">
+  <meta name="keywords" content="Dharmana Lokesh, Data Analyst, SQL, MySQL, Python, Pandas, Power BI, DAX, Excel, Data Analytics Portfolio, AWS, Business Intelligence, Srikakulam">
   <meta name="author" content="Dharmana Lokesh">
   
   <!-- Open Graph / Social Media -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Dharmana Lokesh | Data Analyst Portfolio">
+  <meta property="og:title" content="Dharmana Lokesh | Data Analyst">
   <meta property="og:description" content="2026 B.Tech graduate with hands-on Data Analyst experience through 2 internships and 4 end-to-end projects spanning SQL, Python, Excel, and Power BI.">
   <meta property="og:image" content="assets/images/profile.jpg">
   
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230284c7'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-weight='bold' font-size='48' fill='white'>DL</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='%2300f2fe'/><stop offset='100%' stop-color='%234facfe'/></linearGradient></defs><rect width='100' height='100' rx='24' fill='%2307090e'/><rect x='2' y='2' width='96' height='96' rx='22' fill='none' stroke='url(%23g)' stroke-width='4'/><text x='50%' y='58%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-weight='900' font-size='42' fill='white'>DL</text></svg>">
 
-  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <!-- Google Fonts: Syne (Futuristic Display), Space Grotesk, Inter & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@600;700;800;900&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome Icons -->
+  <!-- Font Awesome Icons 6.5.1 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- Chart.js for Interactive Data Visualizations -->
+  <!-- Three.js (3D WebGL Library) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Chart.js for Futuristic Analytics Command Visualizations -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/styles.css?v=3">
 </head>
 <body data-theme="dark">
 
-  <!-- Toast Notification Container -->
+  <!-- Custom Futuristic Cursor (Desktop Only) -->
+  <div id="cursor-dot" class="cursor-dot" aria-hidden="true"></div>
+  <div id="cursor-ring" class="cursor-ring" aria-hidden="true">
+    <span id="cursor-label" class="cursor-label"></span>
+  </div>
+
+  <!-- Ambient Dynamic Data Background Canvas -->
+  <canvas id="ambient-canvas" class="ambient-canvas" aria-hidden="true"></canvas>
+
+  <!-- Notification Toast Container -->
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
+  <!-- Audio Interaction Toggle (Subtle Digital UI Sounds) -->
+  <button id="sound-toggle" class="sound-toggle-btn" aria-label="Toggle UI Audio Feedback" title="Toggle UI sound effects">
+    <i class="fa-solid fa-volume-xmark" id="sound-icon"></i>
+    <span class="sound-text">AUDIO OFF</span>
+  </button>
+
   <!-- Top Announcement / Recruiter Status Bar -->
-  <div class="recruiter-banner">
+  <aside class="recruiter-banner" aria-label="Candidate Availability Banner">
     <div class="container banner-inner">
-      <span class="badge-pulse"><span class="pulse-dot"></span> Available for 2026 Data Analyst &amp; Junior Analyst Roles</span>
+      <div class="banner-status">
+        <span class="beacon-pulse"><span class="pulse-core"></span></span>
+        <span class="status-text"><strong>2026 Batch Graduate</strong> &bull; Available for Data Analyst &amp; BI Roles</span>
+      </div>
       <div class="banner-quick-links">
         <a href="mailto:lokeshdarmana@gmail.com" class="banner-link"><i class="fa-solid fa-envelope"></i> lokeshdarmana@gmail.com</a>
         <a href="tel:9542959711" class="banner-link"><i class="fa-solid fa-phone"></i> +91 9542959711</a>
         <span class="banner-location"><i class="fa-solid fa-location-dot"></i> Srikakulam, Andhra Pradesh</span>
       </div>
     </div>
-  </div>
+  </aside>
 
-  <!-- Navigation Header -->
+  <!-- Site Navigation Header -->
   <header class="site-header" id="site-header">
     <div class="container header-container">
+      
+      <!-- Brand Logo -->
       <a href="#hero" class="brand-logo" aria-label="Dharmana Lokesh Home">
-        <div class="logo-mark">DL</div>
-        <div class="logo-text">
-          <span class="logo-name">Dharmana Lokesh</span>
-          <span class="logo-tag">Data Analyst</span>
+        <div class="logo-hologram">
+          <div class="logo-box">DL</div>
+          <div class="logo-ring"></div>
+        </div>
+        <div class="logo-meta">
+          <span class="logo-name">DHARMANA LOKESH</span>
+          <span class="logo-role"><span class="cyber-bracket">[</span> DATA ANALYST <span class="cyber-bracket">]</span></span>
         </div>
       </a>
 
       <!-- Desktop Navigation Menu -->
       <nav class="desktop-nav" aria-label="Main Navigation">
         <ul class="nav-links">
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#skills" class="nav-link">Skills</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#experience" class="nav-link">Experience</a></li>
-          <li><a href="#certifications" class="nav-link">Certifications</a></li>
-          <li><a href="#education" class="nav-link">Education</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a href="#about" class="nav-link"><span class="nav-num">01.</span> About</a></li>
+          <li><a href="#skills" class="nav-link"><span class="nav-num">02.</span> Skills Matrix</a></li>
+          <li><a href="#projects" class="nav-link"><span class="nav-num">03.</span> Projects</a></li>
+          <li><a href="#command-center" class="nav-link"><span class="nav-num">04.</span> Analytics Hub</a></li>
+          <li><a href="#pipeline" class="nav-link"><span class="nav-num">05.</span> Pipeline</a></li>
+          <li><a href="#experience" class="nav-link"><span class="nav-num">06.</span> Experience</a></li>
+          <li><a href="#certifications" class="nav-link"><span class="nav-num">07.</span> Credentials</a></li>
+          <li><a href="#contact" class="nav-link"><span class="nav-num">08.</span> Contact</a></li>
         </ul>
       </nav>
 
       <!-- Header Action Controls -->
       <div class="header-actions">
-        <!-- Theme Toggle Button -->
-        <button id="theme-toggle" class="btn-icon theme-btn" aria-label="Toggle Dark/Light Mode" title="Toggle theme">
-          <i class="fa-solid fa-sun" id="theme-icon"></i>
-        </button>
-
-        <!-- Download CV Header Button -->
-        <a href="assets/docs/Dharmana_Lokesh_Resume.pdf" download="Dharmana_Lokesh_Resume.pdf" class="btn btn-sm btn-primary header-cv-btn" id="header-resume-btn">
+        <!-- Resume Download Button -->
+        <a href="assets/docs/Dharmana_Lokesh_Resume.pdf" download="Dharmana_Lokesh_Resume.pdf" class="btn btn-sm btn-primary header-cv-btn" id="header-resume-btn" data-hover-label="PDF">
           <i class="fa-solid fa-file-arrow-down"></i>
           <span>Resume</span>
         </a>
 
-        <!-- Mobile Hamburger Button -->
+        <!-- Mobile Drawer Toggle -->
         <button id="mobile-toggle" class="btn-icon mobile-menu-btn" aria-label="Open mobile navigation menu" aria-expanded="false">
           <i class="fa-solid fa-bars" id="menu-icon"></i>
         </button>
       </div>
     </div>
 
-    <!-- Mobile Drawer Navigation -->
+    <!-- Mobile Drawer Menu -->
     <div class="mobile-drawer" id="mobile-drawer">
       <div class="mobile-drawer-inner">
+        <div class="drawer-header">
+          <span class="drawer-tag">NAVIGATION TERMINAL</span>
+          <button id="drawer-close" class="btn-icon" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+        </div>
         <ul class="mobile-nav-links">
-          <li><a href="#about" class="mobile-link"><i class="fa-solid fa-user"></i> About Me</a></li>
-          <li><a href="#skills" class="mobile-link"><i class="fa-solid fa-code"></i> Technical Skills</a></li>
-          <li><a href="#projects" class="mobile-link"><i class="fa-solid fa-chart-column"></i> Featured Projects</a></li>
-          <li><a href="#experience" class="mobile-link"><i class="fa-solid fa-briefcase"></i> Experience</a></li>
-          <li><a href="#certifications" class="mobile-link"><i class="fa-solid fa-award"></i> Certifications</a></li>
-          <li><a href="#education" class="mobile-link"><i class="fa-solid fa-graduation-cap"></i> Education</a></li>
-          <li><a href="#contact" class="mobile-link"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+          <li><a href="#about" class="mobile-link"><i class="fa-solid fa-user-astronaut"></i> 01 // About Me</a></li>
+          <li><a href="#skills" class="mobile-link"><i class="fa-solid fa-microchip"></i> 02 // Skills Ecosystem</a></li>
+          <li><a href="#projects" class="mobile-link"><i class="fa-solid fa-chart-pie"></i> 03 // Featured Projects</a></li>
+          <li><a href="#command-center" class="mobile-link"><i class="fa-solid fa-terminal"></i> 04 // Analytics Command Hub</a></li>
+          <li><a href="#pipeline" class="mobile-link"><i class="fa-solid fa-diagram-project"></i> 05 // Data Pipeline</a></li>
+          <li><a href="#experience" class="mobile-link"><i class="fa-solid fa-briefcase"></i> 06 // Experience</a></li>
+          <li><a href="#certifications" class="mobile-link"><i class="fa-solid fa-award"></i> 07 // Certifications</a></li>
+          <li><a href="#education" class="mobile-link"><i class="fa-solid fa-graduation-cap"></i> 08 // Education</a></li>
+          <li><a href="#contact" class="mobile-link"><i class="fa-solid fa-paper-plane"></i> 09 // Contact Me</a></li>
         </ul>
-        <div class="mobile-drawer-footer">
+        <div class="drawer-footer">
           <a href="assets/docs/Dharmana_Lokesh_Resume.pdf" download="Dharmana_Lokesh_Resume.pdf" class="btn btn-primary btn-block">
-            <i class="fa-solid fa-file-pdf"></i> Download Resume (PDF)
+            <i class="fa-solid fa-file-pdf"></i> Download Official Resume
           </a>
-          <div class="mobile-socials">
-            <a href="https://www.linkedin.com/in/dharmana-lokesh-290396268" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <div class="drawer-socials">
+            <a href="https://www.linkedin.com/in/dharmana-lokesh-290396268" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
             <a href="https://github.com/Dharmanalokesh" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
             <a href="mailto:lokeshdarmana@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
             <a href="tel:9542959711" aria-label="Phone"><i class="fa-solid fa-phone"></i></a>
@@ -120,764 +148,1209 @@
   </header>
 
   <main>
-    <!-- ==================== 1. HERO SECTION ==================== -->
+    <!-- ==========================================================================
+         1. HERO EXPERIENCE: 3D WEBGL DATA ENVIRONMENT + PARALLAX
+         ========================================================================== -->
     <section class="hero-section" id="hero">
-      <div class="hero-grid-bg" aria-hidden="true"></div>
+      
+      <!-- Interactive Three.js 3D WebGL Canvas -->
+      <canvas id="hero-3d-canvas" class="hero-3d-canvas" aria-hidden="true"></canvas>
+
+      <!-- Subtle Cyber Grid and Scanline Layers -->
+      <div class="hero-grid-overlay" aria-hidden="true"></div>
+      <div class="hero-scanlines" aria-hidden="true"></div>
+
       <div class="container hero-container">
         
+        <!-- Left Hero Content -->
         <div class="hero-content">
-          <div class="status-chip">
-            <span class="status-indicator"></span>
-            <span>2026 B.Tech Fresher &bull; Ready to Join</span>
+          
+          <!-- Recruiter System Status Chip -->
+          <div class="sys-telemetry-badge">
+            <span class="telemetry-node"></span>
+            <span class="telemetry-label">SYSTEM READY // 2026 B.TECH DATA ANALYST</span>
           </div>
 
           <h1 class="hero-name">
-            Hi, I'm <span class="gradient-text">Dharmana Lokesh</span>
+            <span class="name-sub">HELLO, I AM</span>
+            <span class="name-main">DHARMANA LOKESH</span>
           </h1>
 
-          <div class="hero-role-wrapper">
-            <h2 class="hero-role">Data Analyst</h2>
-            <div class="role-separator">&bull;</div>
-            <p class="hero-stack-highlight">SQL | Python | Power BI | Excel</p>
+          <div class="hero-role-display">
+            <div class="role-badge">
+              <span class="role-icon"><i class="fa-solid fa-database"></i></span>
+              <h2 class="role-title">DATA ANALYST</h2>
+            </div>
+            <div class="role-pills">
+              <span class="tech-pill">SQL &bull; MySQL</span>
+              <span class="tech-pill">Python &bull; Pandas</span>
+              <span class="tech-pill">Power BI &bull; DAX</span>
+              <span class="tech-pill">Excel &bull; PivotTables</span>
+            </div>
           </div>
 
-          <p class="hero-intro">
+          <!-- Professional Subtitle (Directly from Resume) -->
+          <p class="hero-subtitle">
             2026 B.Tech graduate with hands-on Data Analyst experience through <strong>two internships</strong> and <strong>four end-to-end projects</strong> spanning SQL, Python, Excel, and Power BI. Skilled in data cleaning, exploratory data analysis, and DAX-driven KPI design, with a track record of building interactive dashboards from raw datasets exceeding <strong>9,000+ records</strong>. Combines strong database fundamentals (MySQL, relational schema design) with cloud exposure (AWS) to deliver accurate, decision-ready insights.
           </p>
 
-          <!-- Primary CTA Buttons -->
-          <div class="hero-actions">
-            <a href="#projects" class="btn btn-primary">
-              <i class="fa-solid fa-chart-line"></i> View Projects
+          <!-- Hero Action Buttons -->
+          <div class="hero-cta-group">
+            <a href="#projects" class="btn btn-primary btn-glow" data-hover-label="EXPLORE">
+              <i class="fa-solid fa-chart-column"></i>
+              <span>VIEW PROJECTS</span>
+              <i class="fa-solid fa-arrow-right btn-arrow"></i>
             </a>
-            <a href="assets/docs/Dharmana_Lokesh_Resume.pdf" download="Dharmana_Lokesh_Resume.pdf" class="btn btn-outline" id="hero-download-btn">
-              <i class="fa-solid fa-download"></i> Download Resume
+            
+            <a href="assets/docs/Dharmana_Lokesh_Resume.pdf" download="Dharmana_Lokesh_Resume.pdf" class="btn btn-outline" id="hero-resume-download" data-hover-label="DOWNLOAD">
+              <i class="fa-solid fa-file-arrow-down"></i>
+              <span>DOWNLOAD RESUME</span>
             </a>
-            <a href="#contact" class="btn btn-secondary">
-              <i class="fa-solid fa-paper-plane"></i> Contact Me
-            </a>
-          </div>
 
-          <!-- Social Links -->
-          <div class="hero-social-strip">
-            <span class="social-label">Connect:</span>
-            <a href="https://www.linkedin.com/in/dharmana-lokesh-290396268" target="_blank" rel="noopener noreferrer" class="social-btn" title="LinkedIn Profile" aria-label="LinkedIn">
-              <i class="fa-brands fa-linkedin-in"></i>
-              <span>LinkedIn</span>
-            </a>
-            <a href="https://github.com/Dharmanalokesh" target="_blank" rel="noopener noreferrer" class="social-btn" title="GitHub Profile" aria-label="GitHub">
-              <i class="fa-brands fa-github"></i>
-              <span>GitHub</span>
-            </a>
-            <a href="mailto:lokeshdarmana@gmail.com" class="social-btn" title="Email Dharmana" aria-label="Email">
+            <a href="#contact" class="btn btn-ghost" data-hover-label="CONNECT">
               <i class="fa-solid fa-envelope"></i>
-              <span>Email</span>
+              <span>CONTACT ME</span>
             </a>
           </div>
+
+          <!-- Social Quick Strip -->
+          <div class="hero-connect-strip">
+            <span class="connect-label">RECRUITER CHANNELS:</span>
+            <div class="connect-links">
+              <a href="https://www.linkedin.com/in/dharmana-lokesh-290396268" target="_blank" rel="noopener noreferrer" class="connect-link" title="LinkedIn Profile" data-hover-label="LINKEDIN">
+                <i class="fa-brands fa-linkedin-in"></i>
+                <span>LinkedIn</span>
+              </a>
+              <a href="https://github.com/Dharmanalokesh" target="_blank" rel="noopener noreferrer" class="connect-link" title="GitHub Profile" data-hover-label="GITHUB">
+                <i class="fa-brands fa-github"></i>
+                <span>GitHub</span>
+              </a>
+              <a href="mailto:lokeshdarmana@gmail.com" class="connect-link" title="Email" data-hover-label="EMAIL">
+                <i class="fa-solid fa-envelope"></i>
+                <span>Email</span>
+              </a>
+              <a href="tel:9542959711" class="connect-link" title="Phone Call" data-hover-label="CALL">
+                <i class="fa-solid fa-phone"></i>
+                <span>+91 9542959711</span>
+              </a>
+            </div>
+          </div>
+
         </div>
 
-        <!-- Profile Visual Card -->
+        <!-- Right Hero Visual: Holographic 3D Tilt Profile Card -->
         <div class="hero-visual">
-          <div class="profile-card">
-            <div class="profile-image-wrapper">
-              <img src="assets/images/profile.jpg" alt="Dharmana Lokesh - Data Analyst" class="profile-image" id="profile-img" width="380" height="380">
-              <div class="profile-glow"></div>
+          <div class="holo-card-wrap tilt-card" data-tilt data-tilt-max="12" data-tilt-glare data-tilt-max-glare="0.25">
+            
+            <!-- Futuristic Card Brackets & Glow -->
+            <div class="holo-frame-brackets">
+              <span class="bracket top-left"></span>
+              <span class="bracket top-right"></span>
+              <span class="bracket bottom-left"></span>
+              <span class="bracket bottom-right"></span>
             </div>
 
-            <!-- Floating Badge: Experience -->
-            <div class="metric-chip chip-internships">
-              <div class="metric-icon"><i class="fa-solid fa-briefcase"></i></div>
-              <div class="metric-details">
-                <span class="metric-number">2 Internships</span>
-                <span class="metric-sub">Skill Dzire &amp; Techwing</span>
+            <!-- Profile Image Container -->
+            <div class="profile-frame">
+              <img src="assets/images/profile.jpg" alt="Dharmana Lokesh — Data Analyst" class="profile-photo" id="hero-profile-img" width="400" height="400">
+              <div class="photo-scanline"></div>
+              <div class="photo-gradient-glow"></div>
+            </div>
+
+            <!-- Holographic Telemetry HUD Header -->
+            <div class="holo-card-hud">
+              <div class="hud-status">
+                <span class="hud-beacon"></span>
+                <span>DATA ARCHITECT // VERIFIED</span>
+              </div>
+              <div class="hud-code">ID: DL-2026-ECE</div>
+            </div>
+
+            <!-- Floating 3D Metric Badges (Strictly Resume Grounded) -->
+            <div class="floating-chip chip-internships" data-tilt-depth="30">
+              <div class="chip-icon"><i class="fa-solid fa-briefcase"></i></div>
+              <div class="chip-text">
+                <span class="chip-val">2 Internships</span>
+                <span class="chip-desc">Skill Dzire &amp; Techwing</span>
               </div>
             </div>
 
-            <!-- Floating Badge: Datasets Processed -->
-            <div class="metric-chip chip-datasets">
-              <div class="metric-icon"><i class="fa-solid fa-database"></i></div>
-              <div class="metric-details">
-                <span class="metric-number">9,000+ Records</span>
-                <span class="metric-sub">Dashboard &amp; SQL Scale</span>
+            <div class="floating-chip chip-scale" data-tilt-depth="45">
+              <div class="chip-icon"><i class="fa-solid fa-database"></i></div>
+              <div class="chip-text">
+                <span class="chip-val">9,000+ Records</span>
+                <span class="chip-desc">Amazon &amp; MySQL Datasets</span>
               </div>
             </div>
 
-            <!-- Floating Badge: Academic CGPA -->
-            <div class="metric-chip chip-cgpa">
-              <div class="metric-icon"><i class="fa-solid fa-award"></i></div>
-              <div class="metric-details">
-                <span class="metric-number">8.06 CGPA</span>
-                <span class="metric-sub">B.Tech (2022 – 2026)</span>
+            <div class="floating-chip chip-cgpa" data-tilt-depth="25">
+              <div class="chip-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+              <div class="chip-text">
+                <span class="chip-val">8.06 CGPA</span>
+                <span class="chip-desc">B.Tech ECE (2022–2026)</span>
               </div>
             </div>
+
           </div>
         </div>
 
       </div>
 
-      <!-- Quick KPI Stats Ribbon (Directly from Resume Data) -->
-      <div class="container hero-stats-ribbon">
-        <div class="stat-card">
-          <div class="stat-val"><span class="counter" data-target="9668">9,668</span></div>
-          <div class="stat-lbl">Dataset Records in Prime Video EDA</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-val"><span class="counter" data-target="7045">7,045</span>+</div>
-          <div class="stat-lbl">Hotel Records Managed in MySQL</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-val"><span class="counter" data-target="30">30</span>+</div>
-          <div class="stat-lbl">Complex SQL Queries Executed</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-val"><span class="counter" data-target="13">13</span></div>
-          <div class="stat-lbl">PivotTables Built for Banking Analysis</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-val"><span class="counter" data-target="4">4</span></div>
-          <div class="stat-lbl">Industry Certifications</div>
+      <!-- Quick Verified Metrics Ribbon (Bottom of Hero) -->
+      <div class="container hero-metrics-ribbon">
+        <div class="metric-ribbon-grid">
+          
+          <div class="metric-card" data-tilt>
+            <div class="metric-head">
+              <span class="metric-counter" data-target="9668">9,668</span>
+            </div>
+            <div class="metric-name">Prime Video Titles Analyzed</div>
+            <div class="metric-sub">End-to-End EDA in Python &amp; Pandas</div>
+          </div>
+
+          <div class="metric-card" data-tilt>
+            <div class="metric-head">
+              <span class="metric-counter" data-target="7045">7,045</span><span class="metric-plus">+</span>
+            </div>
+            <div class="metric-name">Hotel Records Managed</div>
+            <div class="metric-sub">Relational MySQL (6 Connected Tables)</div>
+          </div>
+
+          <div class="metric-card" data-tilt>
+            <div class="metric-head">
+              <span class="metric-counter" data-target="30">30</span><span class="metric-plus">+</span>
+            </div>
+            <div class="metric-name">Complex SQL Queries Run</div>
+            <div class="metric-sub">JOINs, GROUP BY, CASE, HAVING</div>
+          </div>
+
+          <div class="metric-card" data-tilt>
+            <div class="metric-head">
+              <span class="metric-counter" data-target="13">13</span>
+            </div>
+            <div class="metric-name">PivotTables Constructed</div>
+            <div class="metric-sub">Indian Banking Fraud &amp; Volume Analysis</div>
+          </div>
+
+          <div class="metric-card" data-tilt>
+            <div class="metric-head">
+              <span class="metric-counter" data-target="10">10</span><span class="metric-plus">+</span>
+            </div>
+            <div class="metric-name">AWS Cloud Services Utilized</div>
+            <div class="metric-sub">EC2, Lambda, S3, LightSail, IAM</div>
+          </div>
+
+          <div class="metric-card" data-tilt>
+            <div class="metric-head">
+              <span class="metric-counter" data-target="4">4</span>
+            </div>
+            <div class="metric-name">Industry Certifications</div>
+            <div class="metric-sub">AWS, IBM, Innomatics &amp; Skill Dzire</div>
+          </div>
+
         </div>
       </div>
+
     </section>
 
-    <!-- ==================== 2. ABOUT ME SECTION ==================== -->
+    <!-- ==========================================================================
+         2. ABOUT EXPERIENCE: INTERACTIVE ANALYTICAL DOSSIER
+         ========================================================================== -->
     <section class="section about-section" id="about">
       <div class="container">
-        <div class="section-header">
-          <span class="section-subtitle"><i class="fa-solid fa-user-check"></i> Candidate Profile</span>
-          <h2 class="section-title">About Me</h2>
-          <div class="section-bar"></div>
+        
+        <div class="section-title-wrap">
+          <div class="section-tag"><i class="fa-solid fa-fingerprint"></i> CANDIDATE DOSSIER // 01</div>
+          <h2 class="section-heading">Analytical Mindset. Rigorous Execution.</h2>
+          <p class="section-lead">Transforming complex, unstructured data into clean schemas and high-conviction decision intelligence.</p>
         </div>
 
         <div class="about-grid">
-          <!-- Left Column: Biography & Narrative -->
-          <div class="about-bio">
-            <h3 class="bio-headline">
-              Analytical thinker delivering structured, decision-ready business intelligence.
-            </h3>
-            <p class="bio-text">
-              I am a <strong>2026 B.Tech graduate</strong> in Electronics and Communication Engineering from Godavari Institute of Engineering and Technology (CGPA: 8.06). As an aspiring Data Analyst, I specialize in transforming raw, unstructured datasets into accurate, actionable insights through structured data cleaning, exploratory data analysis (EDA), relational database querying, and interactive dashboard development.
-            </p>
-            <p class="bio-text">
-              Through my internships at <strong>Skill Dzire</strong> and <strong>Techwing</strong>, along with four comprehensive analytical projects, I have developed a hands-on proficiency in <strong>Python (Pandas, NumPy, Matplotlib, Seaborn)</strong>, <strong>SQL/MySQL relational schema design</strong>, <strong>Power BI with DAX KPI development</strong>, <strong>Microsoft Excel</strong>, and <strong>AWS cloud data workflows</strong>.
-            </p>
-
-            <div class="about-pillars">
-              <div class="pillar-item">
-                <div class="pillar-icon"><i class="fa-solid fa-filter"></i></div>
-                <div class="pillar-content">
-                  <h4>Data Cleaning &amp; Validation</h4>
-                  <p>Handling missing values, data type casting, date parsing, duplicate pruning, and outlier detection for pristine downstream accuracy.</p>
-                </div>
+          
+          <!-- Narrative Telemetry Hub -->
+          <div class="about-narrative-panel">
+            <div class="terminal-box">
+              <div class="terminal-bar">
+                <span class="term-dot red"></span>
+                <span class="term-dot yellow"></span>
+                <span class="term-dot green"></span>
+                <span class="term-title">dharmana_lokesh_profile.telemetry</span>
               </div>
-
-              <div class="pillar-item">
-                <div class="pillar-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
-                <div class="pillar-content">
-                  <h4>Exploratory Data Analysis (EDA)</h4>
-                  <p>Univariate, bivariate, and multivariate analysis to identify distributions, correlations, seasonal trends, and behavioral patterns.</p>
-                </div>
-              </div>
-
-              <div class="pillar-item">
-                <div class="pillar-icon"><i class="fa-solid fa-chart-pie"></i></div>
-                <div class="pillar-content">
-                  <h4>Dashboard &amp; KPI Design</h4>
-                  <p>Crafting interactive dashboards in Power BI and Excel using DAX measures, dynamic slicers, and executive-level visual KPIs.</p>
-                </div>
-              </div>
-
-              <div class="pillar-item">
-                <div class="pillar-icon"><i class="fa-solid fa-database"></i></div>
-                <div class="pillar-content">
-                  <h4>Relational SQL Architecture</h4>
-                  <p>Designing multi-table schemas with primary/foreign keys, joins, subqueries, CASE WHEN, and aggregations for rigorous reporting.</p>
-                </div>
+              <div class="terminal-body">
+                <p class="term-line">
+                  <span class="term-prompt">&gt;</span> I am a <strong>2026 B.Tech graduate in Electronics and Communication Engineering</strong> from <strong>Godavari Institute of Engineering and Technology</strong> (CGPA: 8.06). As a Data Analyst, I bridge the gap between massive, unstructured datasets and executive business decisions through mathematical rigor, relational schema modeling, and interactive visualization.
+                </p>
+                <p class="term-line">
+                  <span class="term-prompt">&gt;</span> Across <strong>two intensive industry internships</strong> (Artificial Intelligence Intern at <em>Skill Dzire</em> and Gen AI &amp; AWS Intern at <em>Techwing</em>) and <strong>four comprehensive end-to-end projects</strong>, I have mastered data extraction, data cleaning, exploratory data analysis (EDA), and interactive dashboard deployment.
+                </p>
+                <p class="term-line">
+                  <span class="term-prompt">&gt;</span> My technical approach combines <strong>Python (Pandas, NumPy, Matplotlib, Seaborn)</strong> for advanced statistical exploration, <strong>MySQL</strong> for normalized relational architecture (writing 30+ complex queries), <strong>Power BI with DAX</strong> for interactive KPI tracking, <strong>Microsoft Excel</strong> for rapid multi-dimensional pivot modeling, and <strong>AWS Cloud services</strong> for scalable data workflows.
+                </p>
               </div>
             </div>
+
+            <!-- 4 Interactive Core Competency Pillars -->
+            <div class="competency-pillars-grid">
+              
+              <div class="pillar-card active" data-pillar="cleaning">
+                <div class="pillar-icon"><i class="fa-solid fa-filter"></i></div>
+                <div class="pillar-info">
+                  <h3 class="pillar-title">Data Cleaning &amp; Validation</h3>
+                  <p class="pillar-desc">Handling missing values, outlier filtration, type casting, date parsing, and constraint validation for downstream reliability.</p>
+                </div>
+              </div>
+
+              <div class="pillar-card" data-pillar="eda">
+                <div class="pillar-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                <div class="pillar-info">
+                  <h3 class="pillar-title">Exploratory Data Analysis</h3>
+                  <p class="pillar-desc">Univariate, bivariate, and multivariate analysis to uncover distributions, seasonal trends, and behavioral patterns.</p>
+                </div>
+              </div>
+
+              <div class="pillar-card" data-pillar="bi">
+                <div class="pillar-icon"><i class="fa-solid fa-chart-pie"></i></div>
+                <div class="pillar-info">
+                  <h3 class="pillar-title">DAX &amp; Dashboard Development</h3>
+                  <p class="pillar-desc">Building interactive Power BI &amp; Excel dashboards with dynamic slicers and DAX measures (CALCULATE, COUNTROWS, AVERAGE).</p>
+                </div>
+              </div>
+
+              <div class="pillar-card" data-pillar="sql">
+                <div class="pillar-icon"><i class="fa-solid fa-database"></i></div>
+                <div class="pillar-info">
+                  <h3 class="pillar-title">Relational SQL Modeling</h3>
+                  <p class="pillar-desc">Designing normalized multi-table MySQL databases (6+ PK/FK relationships), executing complex JOINs and aggregations.</p>
+                </div>
+              </div>
+
+            </div>
+
           </div>
 
-          <!-- Right Column: Candidate Quick Snapshot -->
-          <div class="about-snapshot">
-            <div class="snapshot-card">
-              <div class="snapshot-header">
-                <i class="fa-solid fa-id-card"></i>
-                <h3>Recruiter Snapshot</h3>
+          <!-- Recruiter Snapshot Dossier Card -->
+          <div class="about-snapshot-panel">
+            <div class="dossier-card tilt-card" data-tilt>
+              <div class="dossier-header">
+                <div class="dossier-badge"><i class="fa-solid fa-id-badge"></i> RECRUITER DOSSIER</div>
+                <span class="dossier-serial">#2026-DA-01</span>
               </div>
-              <ul class="snapshot-list">
-                <li>
-                  <span class="snap-label"><i class="fa-solid fa-user"></i> Full Name:</span>
-                  <span class="snap-value">Dharmana Lokesh</span>
+
+              <ul class="dossier-list">
+                <li class="dossier-item">
+                  <span class="d-label"><i class="fa-solid fa-user"></i> Full Name</span>
+                  <span class="d-val">Dharmana Lokesh</span>
                 </li>
-                <li>
-                  <span class="snap-label"><i class="fa-solid fa-briefcase"></i> Role Target:</span>
-                  <span class="snap-value highlight-role">Data Analyst / Junior Analyst (2026)</span>
+                <li class="dossier-item">
+                  <span class="d-label"><i class="fa-solid fa-crosshairs"></i> Target Role</span>
+                  <span class="d-val text-accent">Data Analyst / Junior Analyst (2026 Batch)</span>
                 </li>
-                <li>
-                  <span class="snap-label"><i class="fa-solid fa-graduation-cap"></i> Degree:</span>
-                  <span class="snap-value">B.Tech in ECE (Sep 2022 – Apr 2026)</span>
+                <li class="dossier-item">
+                  <span class="d-label"><i class="fa-solid fa-graduation-cap"></i> Degree</span>
+                  <span class="d-val">B.Tech in ECE (Sep 2022 – Apr 2026)</span>
                 </li>
-                <li>
-                  <span class="snap-label"><i class="fa-solid fa-building-columns"></i> College:</span>
-                  <span class="snap-value">Godavari Institute of Engg. &amp; Tech.</span>
+                <li class="dossier-item">
+                  <span class="d-label"><i class="fa-solid fa-building-columns"></i> Institution</span>
+                  <span class="d-val">Godavari Institute of Engg. &amp; Tech.</span>
                 </li>
-                <li>
-                  <span class="snap-label"><i class="fa-solid fa-star"></i> CGPA:</span>
-                  <span class="snap-value"><strong>8.06 / 10.0</strong></span>
+                <li class="dossier-item">
+                  <span class="d-label"><i class="fa-solid fa-star"></i> Academic CGPA</span>
+                  <span class="d-val highlight-cgpa">8.06 / 10.0</span>
                 </li>
-                <li>
-                  <span class="snap-label"><i class="fa-solid fa-location-dot"></i> Location:</span>
-                  <span class="snap-value">Srikakulam, Andhra Pradesh, India</span>
+                <li class="dossier-item">
+                  <span class="d-label"><i class="fa-solid fa-location-dot"></i> Base Location</span>
+                  <span class="d-val">Srikakulam, Andhra Pradesh, India</span>
                 </li>
-                <li>
-                  <span class="snap-label"><i class="fa-solid fa-envelope"></i> Email:</span>
-                  <span class="snap-value"><a href="mailto:lokeshdarmana@gmail.com">lokeshdarmana@gmail.com</a></span>
+                <li class="dossier-item">
+                  <span class="d-label"><i class="fa-solid fa-plane-departure"></i> Mobility</span>
+                  <span class="d-val">Open to Relocation &amp; Remote Work</span>
                 </li>
-                <li>
-                  <span class="snap-label"><i class="fa-solid fa-phone"></i> Phone:</span>
-                  <span class="snap-value"><a href="tel:9542959711">+91 9542959711</a></span>
+                <li class="dossier-item">
+                  <span class="d-label"><i class="fa-solid fa-cloud"></i> Cloud Certification</span>
+                  <span class="d-val">AWS Certified Cloud Practitioner</span>
                 </li>
-                <li>
-                  <span class="snap-label"><i class="fa-solid fa-cloud"></i> Cloud Focus:</span>
-                  <span class="snap-value">AWS Certified Cloud Practitioner</span>
+                <li class="dossier-item">
+                  <span class="d-label"><i class="fa-solid fa-envelope"></i> Email</span>
+                  <span class="d-val"><a href="mailto:lokeshdarmana@gmail.com" class="copy-trigger" data-copy="lokeshdarmana@gmail.com">lokeshdarmana@gmail.com</a></span>
+                </li>
+                <li class="dossier-item">
+                  <span class="d-label"><i class="fa-solid fa-phone"></i> Phone</span>
+                  <span class="d-val"><a href="tel:9542959711" class="copy-trigger" data-copy="9542959711">+91 9542959711</a></span>
                 </li>
               </ul>
 
-              <div class="snapshot-cta">
+              <div class="dossier-actions">
                 <a href="#contact" class="btn btn-primary btn-block">
-                  <i class="fa-solid fa-comments"></i> Initiate Interview
+                  <i class="fa-solid fa-paper-plane"></i> Initiate Interview
                 </a>
               </div>
             </div>
           </div>
+
         </div>
 
       </div>
     </section>
 
-    <!-- ==================== 3. TECHNICAL SKILLS SECTION ==================== -->
+    <!-- ==========================================================================
+         3. SKILLS EXPERIENCE: INTERCONNECTED DATA ECOSYSTEM
+         ========================================================================== -->
     <section class="section skills-section" id="skills">
       <div class="container">
-        <div class="section-header">
-          <span class="section-subtitle"><i class="fa-solid fa-laptop-code"></i> Competencies</span>
-          <h2 class="section-title">Technical Skills</h2>
-          <p class="section-desc">Strictly verified from resume coursework, internships, and project implementations.</p>
-          <div class="section-bar"></div>
+        
+        <div class="section-title-wrap">
+          <div class="section-tag"><i class="fa-solid fa-network-wired"></i> TECHNICAL ECOSYSTEM // 02</div>
+          <h2 class="section-heading">Interconnected Analytics Stack</h2>
+          <p class="section-lead">Verified technical proficiencies grounded strictly in resume coursework, internships, and project pipelines.</p>
         </div>
 
-        <!-- Skill Filter Controls -->
-        <div class="skill-filters" role="tablist" aria-label="Skill categories">
-          <button class="filter-btn active" data-filter="all">All Skills</button>
-          <button class="filter-btn" data-filter="programming">Programming</button>
-          <button class="filter-btn" data-filter="databases">Databases &amp; SQL</button>
-          <button class="filter-btn" data-filter="visualization">Visualization &amp; BI</button>
-          <button class="filter-btn" data-filter="analysis">Data Analysis</button>
-          <button class="filter-btn" data-filter="cloud">Cloud &amp; Tools</button>
+        <!-- Category Filter Tabs -->
+        <div class="skill-nav-filters" role="tablist">
+          <button class="skill-filter-btn active" data-category="all"><i class="fa-solid fa-layer-group"></i> All Ecosystem</button>
+          <button class="skill-filter-btn" data-category="programming"><i class="fa-brands fa-python"></i> Programming</button>
+          <button class="skill-filter-btn" data-category="databases"><i class="fa-solid fa-database"></i> Databases &amp; SQL</button>
+          <button class="skill-filter-btn" data-category="bi"><i class="fa-solid fa-chart-pie"></i> Visualization &amp; BI</button>
+          <button class="skill-filter-btn" data-category="analysis"><i class="fa-solid fa-chart-line"></i> Data Analysis</button>
+          <button class="skill-filter-btn" data-category="cloud"><i class="fa-brands fa-aws"></i> Cloud &amp; Tools</button>
         </div>
 
-        <div class="skills-grid">
-          
-          <!-- Category 1: Programming -->
-          <div class="skill-category-card" data-category="programming">
-            <div class="skill-card-head">
-              <div class="skill-icon-box"><i class="fa-brands fa-python"></i></div>
-              <div>
-                <h3 class="skill-category-title">Programming</h3>
-                <span class="skill-category-subtitle">Python Ecosystem &amp; Scripting</span>
+        <!-- Ecosystem Grid of Interactive Nodes -->
+        <div class="ecosystem-grid" id="skills-ecosystem">
+
+          <!-- Card 1: Python -->
+          <div class="skill-ecosystem-card" data-category="programming" data-tilt>
+            <div class="skill-card-inner">
+              <div class="card-glow"></div>
+              <div class="card-top">
+                <div class="skill-icon-wrap py-glow"><i class="fa-brands fa-python"></i></div>
+                <span class="skill-node-type">CORE LANGUAGE</span>
               </div>
-            </div>
-            <p class="skill-card-desc">Writing modular, efficient scripts for data ingestion, cleaning, manipulation, and statistical reporting.</p>
-            <div class="skill-pills">
-              <span class="skill-pill primary"><i class="fa-brands fa-python"></i> Python</span>
-              <span class="skill-pill"><i class="fa-solid fa-table"></i> Pandas</span>
-              <span class="skill-pill"><i class="fa-solid fa-square-root-variable"></i> NumPy</span>
-              <span class="skill-pill"><i class="fa-solid fa-chart-line"></i> Matplotlib</span>
-              <span class="skill-pill"><i class="fa-solid fa-chart-area"></i> Seaborn</span>
-              <span class="skill-pill"><i class="fa-solid fa-cubes"></i> OOP (Object-Oriented)</span>
-              <span class="skill-pill"><i class="fa-solid fa-file-code"></i> File &amp; Exception Handling</span>
+              <h3 class="skill-title">Python</h3>
+              <p class="skill-desc">Writing modular, efficient scripts for data ingestion, cleaning, transformation, and statistical reporting.</p>
+              <div class="skill-subnodes">
+                <span class="subnode" title="Data Manipulation">Pandas</span>
+                <span class="subnode" title="Numerical Computing">NumPy</span>
+                <span class="subnode" title="Static Plotting">Matplotlib</span>
+                <span class="subnode" title="Statistical Visualization">Seaborn</span>
+                <span class="subnode">OOP</span>
+                <span class="subnode">File &amp; Exception Handling</span>
+              </div>
+              <div class="skill-meta-footer">
+                <span class="applied-project"><i class="fa-solid fa-check text-accent"></i> Prime Video EDA &amp; 30+ Datasets</span>
+              </div>
             </div>
           </div>
 
-          <!-- Category 2: Databases & SQL -->
-          <div class="skill-category-card" data-category="databases">
-            <div class="skill-card-head">
-              <div class="skill-icon-box"><i class="fa-solid fa-database"></i></div>
-              <div>
-                <h3 class="skill-category-title">Databases &amp; SQL</h3>
-                <span class="skill-category-subtitle">Relational Modeling &amp; Queries</span>
+          <!-- Card 2: Databases & SQL -->
+          <div class="skill-ecosystem-card" data-category="databases" data-tilt>
+            <div class="skill-card-inner">
+              <div class="card-glow"></div>
+              <div class="card-top">
+                <div class="skill-icon-wrap sql-glow"><i class="fa-solid fa-database"></i></div>
+                <span class="skill-node-type">RELATIONAL RDBMS</span>
               </div>
-            </div>
-            <p class="skill-card-desc">Engineering relational schemas, writing high-performance joins, aggregations, and subqueries for multi-table datasets.</p>
-            <div class="skill-pills">
-              <span class="skill-pill primary"><i class="fa-solid fa-database"></i> SQL</span>
-              <span class="skill-pill primary"><i class="fa-solid fa-server"></i> MySQL</span>
-              <span class="skill-pill"><i class="fa-solid fa-diagram-project"></i> Relational Database Design</span>
-              <span class="skill-pill"><i class="fa-solid fa-link"></i> JOINs (Inner, Left, Right)</span>
-              <span class="skill-pill"><i class="fa-solid fa-layer-group"></i> GROUP BY &amp; HAVING</span>
-              <span class="skill-pill"><i class="fa-solid fa-code-branch"></i> CASE WHEN</span>
-              <span class="skill-pill"><i class="fa-solid fa-calculator"></i> Aggregate Functions (COUNT, SUM, AVG)</span>
-              <span class="skill-pill"><i class="fa-solid fa-sitemap"></i> Subqueries</span>
-              <span class="skill-pill"><i class="fa-solid fa-filter"></i> DISTINCT</span>
-              <span class="skill-pill"><i class="fa-solid fa-key"></i> Primary / Foreign Keys</span>
+              <h3 class="skill-title">SQL &amp; MySQL</h3>
+              <p class="skill-desc">Engineering relational schemas, multi-table JOINs, aggregations, conditional filtering, and query optimization.</p>
+              <div class="skill-subnodes">
+                <span class="subnode">Relational Schema Design</span>
+                <span class="subnode">JOINs (Inner, Left, Right)</span>
+                <span class="subnode">GROUP BY &amp; HAVING</span>
+                <span class="subnode">CASE WHEN</span>
+                <span class="subnode">COUNT, SUM, AVG</span>
+                <span class="subnode">Subqueries</span>
+                <span class="subnode">Primary / Foreign Keys</span>
+                <span class="subnode">DISTINCT</span>
+              </div>
+              <div class="skill-meta-footer">
+                <span class="applied-project"><i class="fa-solid fa-check text-accent"></i> Hotel Analytics (7,045+ Records)</span>
+              </div>
             </div>
           </div>
 
-          <!-- Category 3: Visualization & BI -->
-          <div class="skill-category-card" data-category="visualization">
-            <div class="skill-card-head">
-              <div class="skill-icon-box"><i class="fa-solid fa-chart-pie"></i></div>
-              <div>
-                <h3 class="skill-category-title">Visualization &amp; BI</h3>
-                <span class="skill-category-subtitle">Dashboards &amp; Spreadsheets</span>
+          <!-- Card 3: Power BI & DAX -->
+          <div class="skill-ecosystem-card" data-category="bi" data-tilt>
+            <div class="skill-card-inner">
+              <div class="card-glow"></div>
+              <div class="card-top">
+                <div class="skill-icon-wrap pbi-glow"><i class="fa-solid fa-chart-simple"></i></div>
+                <span class="skill-node-type">BUSINESS INTELLIGENCE</span>
               </div>
-            </div>
-            <p class="skill-card-desc">Designing executive dashboards, DAX calculations, automated spreadsheet analysis, and interactive visual reporting.</p>
-            <div class="skill-pills">
-              <span class="skill-pill primary"><i class="fa-solid fa-chart-simple"></i> Power BI</span>
-              <span class="skill-pill"><i class="fa-solid fa-calculator"></i> DAX Measures</span>
-              <span class="skill-pill sub-pill">CALCULATE</span>
-              <span class="skill-pill sub-pill">COUNTROWS</span>
-              <span class="skill-pill sub-pill">AVERAGE</span>
-              <span class="skill-pill sub-pill">DISTINCTCOUNT</span>
-              <span class="skill-pill"><i class="fa-solid fa-wand-magic-sparkles"></i> Power Query</span>
-              <span class="skill-pill primary"><i class="fa-solid fa-file-excel"></i> Microsoft Excel</span>
-              <span class="skill-pill"><i class="fa-solid fa-table-cells"></i> Pivot Tables</span>
-              <span class="skill-pill"><i class="fa-solid fa-magnifying-glass"></i> VLOOKUP / XLOOKUP</span>
-              <span class="skill-pill"><i class="fa-solid fa-palette"></i> Conditional Formatting</span>
-              <span class="skill-pill"><i class="fa-solid fa-gauge-high"></i> Dashboard Development</span>
-              <span class="skill-pill"><i class="fa-solid fa-bullseye"></i> KPI Design</span>
+              <h3 class="skill-title">Power BI &amp; DAX</h3>
+              <p class="skill-desc">Developing interactive executive dashboards, dynamic visual slicers, data modeling, and DAX metric formulation.</p>
+              <div class="skill-subnodes">
+                <span class="subnode">CALCULATE</span>
+                <span class="subnode">COUNTROWS</span>
+                <span class="subnode">AVERAGE</span>
+                <span class="subnode">DISTINCTCOUNT</span>
+                <span class="subnode">Power Query</span>
+                <span class="subnode">KPI Design</span>
+                <span class="subnode">Donut &amp; Line Charts</span>
+                <span class="subnode">Dashboard Dev</span>
+              </div>
+              <div class="skill-meta-footer">
+                <span class="applied-project"><i class="fa-solid fa-check text-accent"></i> Prime Video BI Dashboard (9,668 Titles)</span>
+              </div>
             </div>
           </div>
 
-          <!-- Category 4: Data Analysis -->
-          <div class="skill-category-card" data-category="analysis">
-            <div class="skill-card-head">
-              <div class="skill-icon-box"><i class="fa-solid fa-chart-line"></i></div>
-              <div>
-                <h3 class="skill-category-title">Data Analysis</h3>
-                <span class="skill-category-subtitle">Exploratory &amp; Statistical Methods</span>
+          <!-- Card 4: Microsoft Excel -->
+          <div class="skill-ecosystem-card" data-category="bi" data-tilt>
+            <div class="skill-card-inner">
+              <div class="card-glow"></div>
+              <div class="card-top">
+                <div class="skill-icon-wrap excel-glow"><i class="fa-solid fa-file-excel"></i></div>
+                <span class="skill-node-type">SPREADSHEET MODELING</span>
               </div>
-            </div>
-            <p class="skill-card-desc">End-to-end analytical lifecycle from raw telemetry ingestion to structured trend analysis and decision support.</p>
-            <div class="skill-pills">
-              <span class="skill-pill primary"><i class="fa-solid fa-magnifying-glass-chart"></i> Exploratory Data Analysis (EDA)</span>
-              <span class="skill-pill">Univariate Analysis</span>
-              <span class="skill-pill">Bivariate Analysis</span>
-              <span class="skill-pill">Multivariate Analysis</span>
-              <span class="skill-pill"><i class="fa-solid fa-broom"></i> Data Cleaning</span>
-              <span class="skill-pill"><i class="fa-solid fa-check-double"></i> Data Validation</span>
-              <span class="skill-pill"><i class="fa-solid fa-shuffle"></i> Data Transformation</span>
-              <span class="skill-pill"><i class="fa-solid fa-lightbulb"></i> Data Interpretation</span>
-              <span class="skill-pill"><i class="fa-solid fa-arrow-trend-up"></i> Trend Analysis</span>
+              <h3 class="skill-title">Microsoft Excel</h3>
+              <p class="skill-desc">Rapid cross-tabulation, formula engineering, longitudinal time modeling, and interactive KPI dashboard design.</p>
+              <div class="skill-subnodes">
+                <span class="subnode">13 PivotTables</span>
+                <span class="subnode">VLOOKUP / XLOOKUP</span>
+                <span class="subnode">Conditional Formatting</span>
+                <span class="subnode">Excel Tables &amp; Formulas</span>
+                <span class="subnode">Dynamic Slicers</span>
+                <span class="subnode">KPI Cards</span>
+                <span class="subnode">Stacked-Bar Charts</span>
+              </div>
+              <div class="skill-meta-footer">
+                <span class="applied-project"><i class="fa-solid fa-check text-accent"></i> Indian Banking Analysis (500+ Records)</span>
+              </div>
             </div>
           </div>
 
-          <!-- Category 5: Cloud & Tools -->
-          <div class="skill-category-card" data-category="cloud">
-            <div class="skill-card-head">
-              <div class="skill-icon-box"><i class="fa-solid fa-cloud"></i></div>
-              <div>
-                <h3 class="skill-category-title">Cloud &amp; Tools</h3>
-                <span class="skill-category-subtitle">Cloud Services &amp; Developer Tools</span>
+          <!-- Card 5: Exploratory Data Analysis -->
+          <div class="skill-ecosystem-card" data-category="analysis" data-tilt>
+            <div class="skill-card-inner">
+              <div class="card-glow"></div>
+              <div class="card-top">
+                <div class="skill-icon-wrap eda-glow"><i class="fa-solid fa-chart-line"></i></div>
+                <span class="skill-node-type">ANALYTICAL LIFECYCLE</span>
+              </div>
+              <h3 class="skill-title">Data Analysis &amp; EDA</h3>
+              <p class="skill-desc">End-to-end data preparation, missing value treatment, multi-variable correlation, and decision-support trend analysis.</p>
+              <div class="skill-subnodes">
+                <span class="subnode">Univariate Analysis</span>
+                <span class="subnode">Bivariate Analysis</span>
+                <span class="subnode">Multivariate Analysis</span>
+                <span class="subnode">Data Cleaning</span>
+                <span class="subnode">Data Validation</span>
+                <span class="subnode">Data Transformation</span>
+                <span class="subnode">Data Interpretation</span>
+                <span class="subnode">Trend Analysis</span>
+              </div>
+              <div class="skill-meta-footer">
+                <span class="applied-project"><i class="fa-solid fa-check text-accent"></i> Skill Dzire &amp; Techwing Internships</span>
               </div>
             </div>
-            <p class="skill-card-desc">Hands-on experience deploying workflows on AWS and version-controlling analysis scripts in collaborative repositories.</p>
-            <div class="skill-pills">
-              <span class="skill-pill primary"><i class="fa-brands fa-aws"></i> AWS (10+ Services)</span>
-              <span class="skill-pill sub-pill">EC2</span>
-              <span class="skill-pill sub-pill">Lambda</span>
-              <span class="skill-pill sub-pill">LightSail</span>
-              <span class="skill-pill sub-pill">S3</span>
-              <span class="skill-pill sub-pill">IAM</span>
-              <span class="skill-pill"><i class="fa-brands fa-git-alt"></i> Git</span>
-              <span class="skill-pill"><i class="fa-brands fa-github"></i> GitHub</span>
-              <span class="skill-pill"><i class="fa-solid fa-book-bookmark"></i> Jupyter Notebook</span>
-              <span class="skill-pill"><i class="fa-solid fa-code"></i> VS Code</span>
+          </div>
+
+          <!-- Card 6: AWS Cloud & Developer Tools -->
+          <div class="skill-ecosystem-card" data-category="cloud" data-tilt>
+            <div class="skill-card-inner">
+              <div class="card-glow"></div>
+              <div class="card-top">
+                <div class="skill-icon-wrap aws-glow"><i class="fa-brands fa-aws"></i></div>
+                <span class="skill-node-type">CLOUD &amp; VERSIONING</span>
+              </div>
+              <h3 class="skill-title">AWS &amp; Developer Tools</h3>
+              <p class="skill-desc">Utilizing 10+ AWS cloud services for scalable data pipelines, collaborative version control, and reproducible workflows.</p>
+              <div class="skill-subnodes">
+                <span class="subnode">EC2</span>
+                <span class="subnode">Lambda</span>
+                <span class="subnode">S3</span>
+                <span class="subnode">LightSail</span>
+                <span class="subnode">IAM</span>
+                <span class="subnode">Git &amp; GitHub</span>
+                <span class="subnode">Jupyter Notebook</span>
+                <span class="subnode">VS Code</span>
+              </div>
+              <div class="skill-meta-footer">
+                <span class="applied-project"><i class="fa-solid fa-check text-accent"></i> Techwing Internship &amp; AWS Certified</span>
+              </div>
             </div>
           </div>
 
         </div>
+
       </div>
     </section>
 
-    <!-- ==================== 4. FEATURED PROJECTS SECTION ==================== -->
+    <!-- ==========================================================================
+         4. CENTERPIECE PROJECTS EXPERIENCE: 3D ANALYTICAL PRODUCTS
+         ========================================================================== -->
     <section class="section projects-section" id="projects">
       <div class="container">
-        <div class="section-header">
-          <span class="section-subtitle"><i class="fa-solid fa-diagram-project"></i> Portfolio Work</span>
-          <h2 class="section-title">Featured Projects</h2>
-          <p class="section-desc">Real-world data projects demonstrating end-to-end analytical capability, rigorous query writing, and interactive dashboard engineering.</p>
-          <div class="section-bar"></div>
+        
+        <div class="section-title-wrap">
+          <div class="section-tag"><i class="fa-solid fa-cubes"></i> CENTERPIECE PORTFOLIO // 03</div>
+          <h2 class="section-heading">Featured Analytical Projects</h2>
+          <p class="section-lead">Real-world data products demonstrating comprehensive data cleaning, statistical modeling, relational SQL, and interactive dashboards.</p>
         </div>
 
-        <div class="projects-list">
+        <div class="projects-container">
 
-          <!-- PROJECT 1: Amazon Prime Video -->
-          <article class="project-card">
-            <div class="project-header">
-              <div class="project-title-area">
-                <span class="project-badge python-badge"><i class="fa-brands fa-python"></i> Python &bull; Power BI</span>
-                <h3 class="project-title">Amazon Prime Video Content Analysis Dashboard</h3>
-                <p class="project-subtitle">End-to-End Exploratory Data Analysis &amp; Interactive Business Intelligence Dashboard</p>
+          <!-- PROJECT 1: Amazon Prime Video Content Analysis Dashboard -->
+          <article class="project-3d-card tilt-card" data-tilt data-tilt-max="8" data-tilt-glare data-tilt-max-glare="0.2">
+            <div class="card-ambient-glow"></div>
+            
+            <div class="project-card-header">
+              <div class="project-meta-left">
+                <span class="project-tag py-tag"><i class="fa-brands fa-python"></i> Python &bull; Power BI</span>
+                <h3 class="project-heading">Amazon Prime Video Content Analysis Dashboard</h3>
+                <p class="project-subheading">End-to-End Exploratory Data Analysis &amp; Interactive Business Intelligence Dashboard</p>
               </div>
-              <div class="project-links">
-                <a href="https://github.com/Dharmanalokesh" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
-                  <i class="fa-brands fa-github"></i> View GitHub
+              <div class="project-links-right">
+                <a href="https://github.com/Dharmanalokesh" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline" title="GitHub Repository">
+                  <i class="fa-brands fa-github"></i> <span>GitHub</span>
                 </a>
+                <button class="btn btn-sm btn-primary inspect-project-btn" data-project="prime">
+                  <i class="fa-solid fa-expand"></i> <span>Inspect Dossier</span>
+                </button>
               </div>
             </div>
 
-            <div class="project-body-grid">
-              <div class="project-narrative">
+            <div class="project-card-body">
+              
+              <!-- Left Column: Problem, Execution, Insights -->
+              <div class="project-details-column">
                 
-                <div class="info-block">
-                  <h4 class="info-label"><i class="fa-solid fa-triangle-exclamation"></i> Problem Statement</h4>
-                  <p class="info-text">
-                    Large-scale streaming catalogs contain complex, multi-attribute content metadata that requires rigorous exploratory data analysis to evaluate content strategy, catalog balance, regional distribution, and genre dominance for executive content programming.
+                <div class="project-spec-item">
+                  <h4 class="spec-title"><i class="fa-solid fa-microscope text-accent"></i> Analytical Objective &amp; Problem</h4>
+                  <p class="spec-content">
+                    Streaming catalog metadata requires deep statistical exploration to evaluate genre saturation, content distribution ratios, country-level production velocity, and audience maturity ratings for catalog expansion strategy.
                   </p>
                 </div>
 
-                <div class="info-block">
-                  <h4 class="info-label"><i class="fa-solid fa-gears"></i> Key Analysis &amp; Technical Execution</h4>
-                  <ul class="project-bullet-list">
+                <div class="project-spec-item">
+                  <h4 class="spec-title"><i class="fa-solid fa-gears text-accent"></i> Key Technical Execution (Resume Verified)</h4>
+                  <ul class="spec-bullets">
                     <li>
-                      <strong>End-to-End EDA on 9,668 Titles:</strong> Performed comprehensive Exploratory Data Analysis on a 9,668-title Amazon Prime Video dataset using Python and Pandas, including data cleaning, missing value imputation, preprocessing, validation, and analysis.
+                      <strong>End-to-End EDA on 9,668 Titles:</strong> Cleaned, preprocessed, validated, and analyzed a comprehensive 9,668-title Amazon Prime Video dataset using Python and Pandas.
                     </li>
                     <li>
-                      <strong>Statistical Content Segmentation:</strong> Analyzed <strong>7,814 movies</strong> and <strong>1,854 TV shows</strong> using Matplotlib and Seaborn to identify trends and patterns across genres, ratings, release years, content types, and country-wise content distribution.
+                      <strong>Segmentation of 7,814 Movies &amp; 1,854 TV Shows:</strong> Leveraged Matplotlib and Seaborn to identify trends across genres, ratings, release years, content types, and country-wise distribution.
                     </li>
                     <li>
-                      <strong>Interactive Multi-Chart Dashboard:</strong> Designed an interactive Power BI dashboard featuring donut, line, bar charts, and slicers comparing 7,814 movies vs. 1,854 TV shows.
+                      <strong>Interactive BI Dashboard:</strong> Engineered an interactive Power BI dashboard with donut, line, and bar charts, coupled with dynamic slicers.
                     </li>
                   </ul>
                 </div>
 
-                <div class="info-block">
-                  <h4 class="info-label"><i class="fa-solid fa-square-poll-vertical"></i> Important Results &amp; Data Insights</h4>
-                  <div class="results-grid">
-                    <div class="result-stat-box">
-                      <span class="res-num">9,668</span>
-                      <span class="res-desc">Total Titles Processed</span>
-                    </div>
-                    <div class="result-stat-box">
-                      <span class="res-num">7,814</span>
-                      <span class="res-desc">Movies Cataloged (80.8%)</span>
-                    </div>
-                    <div class="result-stat-box">
-                      <span class="res-num">1,854</span>
-                      <span class="res-desc">TV Shows Cataloged (19.2%)</span>
-                    </div>
-                    <div class="result-stat-box">
-                      <span class="res-num">United States</span>
-                      <span class="res-desc">Top Content-Producing Country</span>
-                    </div>
+                <!-- Verified Key Insights Box -->
+                <div class="project-insights-box">
+                  <div class="insight-stat">
+                    <span class="i-val">9,668</span>
+                    <span class="i-lbl">Total Catalog Titles</span>
                   </div>
-                  <p class="key-finding-text">
-                    <i class="fa-solid fa-circle-check text-accent"></i> <strong>Leading Genres Identified:</strong> <em>Drama</em>, <em>Comedy</em>, <em>Action</em>, and <em>Suspense</em> emerged as the predominant catalog drivers across both releases.
-                  </p>
+                  <div class="insight-stat">
+                    <span class="i-val">7,814 (80.8%)</span>
+                    <span class="i-lbl">Movies Cataloged</span>
+                  </div>
+                  <div class="insight-stat">
+                    <span class="i-val">1,854 (19.2%)</span>
+                    <span class="i-lbl">TV Shows Cataloged</span>
+                  </div>
+                  <div class="insight-stat">
+                    <span class="i-val">United States</span>
+                    <span class="i-lbl">Top Producing Country</span>
+                  </div>
                 </div>
 
-                <div class="tech-stack-row">
-                  <span class="stack-tag"><i class="fa-brands fa-python"></i> Python</span>
-                  <span class="stack-tag">Pandas</span>
-                  <span class="stack-tag">NumPy</span>
-                  <span class="stack-tag">Matplotlib</span>
-                  <span class="stack-tag">Seaborn</span>
-                  <span class="stack-tag"><i class="fa-solid fa-chart-pie"></i> Power BI</span>
-                  <span class="stack-tag">Donut &amp; Line Charts</span>
-                  <span class="stack-tag">Dynamic Slicers</span>
+                <div class="project-key-takeaway">
+                  <i class="fa-solid fa-circle-check text-accent"></i>
+                  <span><strong>Leading Genres Identified:</strong> <em>Drama</em>, <em>Comedy</em>, <em>Action</em>, and <em>Suspense</em> emerged as the primary catalog drivers across global releases.</span>
                 </div>
+
+                <div class="project-tags-strip">
+                  <span class="tech-tag"><i class="fa-brands fa-python"></i> Python</span>
+                  <span class="tech-tag">Pandas</span>
+                  <span class="tech-tag">NumPy</span>
+                  <span class="tech-tag">Matplotlib</span>
+                  <span class="tech-tag">Seaborn</span>
+                  <span class="tech-tag"><i class="fa-solid fa-chart-pie"></i> Power BI</span>
+                  <span class="tech-tag">Donut &amp; Line Charts</span>
+                  <span class="tech-tag">Dynamic Slicers</span>
+                </div>
+
               </div>
 
-              <!-- Interactive Chart Preview for Project 1 -->
-              <div class="project-visual-panel">
-                <div class="dashboard-preview-card">
-                  <div class="panel-header">
-                    <div class="panel-title"><i class="fa-solid fa-chart-pie"></i> Content Distribution Analysis</div>
-                    <span class="dataset-tag">9,668 Records</span>
+              <!-- Right Column: Interactive Chart Visualization Preview -->
+              <div class="project-interactive-preview">
+                <div class="chart-display-card">
+                  <div class="chart-card-top">
+                    <span class="chart-badge"><i class="fa-solid fa-chart-pie"></i> Verified Dataset: 9,668 Records</span>
+                    <span class="chart-legend-indicator">Movies vs. TV Shows</span>
                   </div>
-                  <div class="chart-wrapper">
-                    <canvas id="primeContentChart" width="300" height="220" aria-label="Donut chart showing 7814 Movies vs 1854 TV shows"></canvas>
+                  
+                  <div class="canvas-container">
+                    <canvas id="primeDonutChart" width="300" height="240" aria-label="Donut chart comparing 7814 Movies vs 1854 TV shows"></canvas>
                   </div>
-                  <div class="chart-legend-metrics">
-                    <div class="leg-item">
-                      <span class="leg-dot movie-dot"></span>
-                      <span>Movies: <strong>7,814</strong> (80.8%)</span>
-                    </div>
-                    <div class="leg-item">
-                      <span class="leg-dot show-dot"></span>
-                      <span>TV Shows: <strong>1,854</strong> (19.2%)</span>
-                    </div>
-                  </div>
-                  <div class="top-genres-box">
-                    <span class="top-label">Leading Catalog Genres:</span>
-                    <div class="genre-tags">
-                      <span class="g-tag">Drama</span>
-                      <span class="g-tag">Comedy</span>
-                      <span class="g-tag">Action</span>
-                      <span class="g-tag">Suspense</span>
+
+                  <div class="genre-distribution-bar">
+                    <span class="bar-title">Leading Catalog Genres:</span>
+                    <div class="genre-chips">
+                      <span class="g-chip drama">Drama</span>
+                      <span class="g-chip comedy">Comedy</span>
+                      <span class="g-chip action">Action</span>
+                      <span class="g-chip suspense">Suspense</span>
                     </div>
                   </div>
                 </div>
               </div>
+
             </div>
           </article>
 
-          <!-- PROJECT 2: Indian Banking Transactions -->
-          <article class="project-card">
-            <div class="project-header">
-              <div class="project-title-area">
-                <span class="project-badge excel-badge"><i class="fa-solid fa-file-excel"></i> Excel &bull; Pivot Tables</span>
-                <h3 class="project-title">Indian Banking Transactions Analysis</h3>
-                <p class="project-subtitle">Fraud Pattern Recognition, Transaction Volume Modeling &amp; Dynamic Excel KPI Dashboard</p>
+          <!-- PROJECT 2: Indian Banking Transactions Analysis -->
+          <article class="project-3d-card tilt-card" data-tilt data-tilt-max="8" data-tilt-glare data-tilt-max-glare="0.2">
+            <div class="card-ambient-glow"></div>
+            
+            <div class="project-card-header">
+              <div class="project-meta-left">
+                <span class="project-tag excel-tag"><i class="fa-solid fa-file-excel"></i> Excel &bull; Pivot Tables</span>
+                <h3 class="project-heading">Indian Banking Transactions Analysis</h3>
+                <p class="project-subheading">Fraud Pattern Recognition, Transaction Volume Modeling &amp; Dynamic Excel KPI Dashboard</p>
               </div>
-              <div class="project-links">
-                <a href="https://github.com/Dharmanalokesh" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
-                  <i class="fa-brands fa-github"></i> View GitHub
+              <div class="project-links-right">
+                <a href="https://github.com/Dharmanalokesh" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline" title="GitHub Repository">
+                  <i class="fa-brands fa-github"></i> <span>GitHub</span>
                 </a>
+                <button class="btn btn-sm btn-primary inspect-project-btn" data-project="banking">
+                  <i class="fa-solid fa-expand"></i> <span>Inspect Dossier</span>
+                </button>
               </div>
             </div>
 
-            <div class="project-body-grid">
-              <div class="project-narrative">
+            <div class="project-card-body">
+              
+              <!-- Left Column: Problem, Execution, Insights -->
+              <div class="project-details-column">
                 
-                <div class="info-block">
-                  <h4 class="info-label"><i class="fa-solid fa-triangle-exclamation"></i> Problem Statement</h4>
-                  <p class="info-text">
-                    Financial institutions require rapid, dynamic surveillance of banking transactions across dispersed geographic zones, diverse payment rails, and seasonal timeframes to detect fraudulent behaviors and monitor transaction velocity without latency.
+                <div class="project-spec-item">
+                  <h4 class="spec-title"><i class="fa-solid fa-microscope text-accent"></i> Analytical Objective &amp; Problem</h4>
+                  <p class="spec-content">
+                    Financial surveillance requires rapid monitoring across disparate geographic zones, seasonal time periods, and payment rails to detect suspicious anomalies, monitor transaction throughput, and flag fraud indicators.
                   </p>
                 </div>
 
-                <div class="info-block">
-                  <h4 class="info-label"><i class="fa-solid fa-gears"></i> Key Analysis &amp; Technical Execution</h4>
-                  <ul class="project-bullet-list">
+                <div class="project-spec-item">
+                  <h4 class="spec-title"><i class="fa-solid fa-gears text-accent"></i> Key Technical Execution (Resume Verified)</h4>
+                  <ul class="spec-bullets">
                     <li>
-                      <strong>Transaction Dataset Analysis:</strong> Analyzed <strong>500+ banking transactions</strong> in Excel to uncover trends across regions, payment modes, and fraud patterns.
+                      <strong>Analysis of 500+ Banking Transactions:</strong> Uncovered key patterns across geographic regions, payment modes, and suspicious fraud occurrences in Microsoft Excel.
                     </li>
                     <li>
-                      <strong>Structured Data Modeling:</strong> Cleaned and structured raw transactional data using Excel Tables, formulas, and engineered a custom <em>year-month field</em> for longitudinal time-based trend analysis.
+                      <strong>Custom Dimension Engineering:</strong> Cleaned and structured raw transactional records using Excel Tables, formulas, and engineered a custom <em>year-month field</em> for longitudinal time-based trend analysis.
                     </li>
                     <li>
-                      <strong>13 PivotTable Analytical Matrix:</strong> Built <strong>13 PivotTables</strong> to systematically break down transaction volume, total monetary amount, payment modes, regional velocity, and fraud incident frequencies.
+                      <strong>13 PivotTable Analytical Suite:</strong> Systematically constructed 13 PivotTables to dissect transaction volume, monetary sums, channel popularity, and fraud frequencies.
                     </li>
                     <li>
-                      <strong>Dynamic Interactive Dashboard:</strong> Designed an interactive Excel dashboard with KPI cards, bar/line/doughnut/stacked-bar charts, and slicers for seamless dynamic filtering by time, region, and channel.
+                      <strong>Dynamic Interactive Dashboard:</strong> Built an executive Excel dashboard featuring KPI cards, bar, line, doughnut, and stacked-bar charts with interactive slicers.
                     </li>
                   </ul>
                 </div>
 
-                <div class="info-block">
-                  <h4 class="info-label"><i class="fa-solid fa-square-poll-vertical"></i> Important Results &amp; Data Insights</h4>
-                  <div class="results-grid">
-                    <div class="result-stat-box">
-                      <span class="res-num">500+</span>
-                      <span class="res-desc">Transactions Evaluated</span>
-                    </div>
-                    <div class="result-stat-box">
-                      <span class="res-num">13</span>
-                      <span class="res-desc">PivotTables Constructed</span>
-                    </div>
-                    <div class="result-stat-box">
-                      <span class="res-num">Multi-Chart</span>
-                      <span class="res-desc">Bar / Line / Doughnut / Stacked</span>
-                    </div>
-                    <div class="result-stat-box">
-                      <span class="res-num">Dynamic Slicers</span>
-                      <span class="res-desc">Time &amp; Region Interactivity</span>
-                    </div>
+                <!-- Verified Key Insights Box -->
+                <div class="project-insights-box">
+                  <div class="insight-stat">
+                    <span class="i-val">500+</span>
+                    <span class="i-lbl">Transactions Evaluated</span>
                   </div>
-                  <p class="key-finding-text">
-                    <i class="fa-solid fa-circle-check text-accent"></i> <strong>Actionable Analytical Output:</strong> Enabled instant identification of payment mode vulnerabilities and regional fraud spikes through synchronized visual slicers.
-                  </p>
+                  <div class="insight-stat">
+                    <span class="i-val">13</span>
+                    <span class="i-lbl">PivotTables Built</span>
+                  </div>
+                  <div class="insight-stat">
+                    <span class="i-val">Multi-Chart</span>
+                    <span class="i-lbl">Bar, Line, Doughnut</span>
+                  </div>
+                  <div class="insight-stat">
+                    <span class="i-val">Dynamic</span>
+                    <span class="i-lbl">Time &amp; Region Slicers</span>
+                  </div>
                 </div>
 
-                <div class="tech-stack-row">
-                  <span class="stack-tag"><i class="fa-solid fa-file-excel"></i> Microsoft Excel</span>
-                  <span class="stack-tag">13 PivotTables</span>
-                  <span class="stack-tag">Excel Tables &amp; Formulas</span>
-                  <span class="stack-tag">Year-Month Time Field</span>
-                  <span class="stack-tag">Interactive Slicers</span>
-                  <span class="stack-tag">KPI Cards</span>
-                  <span class="stack-tag">Fraud Pattern Analysis</span>
+                <div class="project-key-takeaway">
+                  <i class="fa-solid fa-circle-check text-accent"></i>
+                  <span><strong>Operational Impact:</strong> Enabled immediate detection of payment channel vulnerabilities and regional transaction spikes via synchronized visual filters.</span>
                 </div>
+
+                <div class="project-tags-strip">
+                  <span class="tech-tag"><i class="fa-solid fa-file-excel"></i> Microsoft Excel</span>
+                  <span class="tech-tag">13 PivotTables</span>
+                  <span class="tech-tag">Excel Tables &amp; Formulas</span>
+                  <span class="tech-tag">Year-Month Time Field</span>
+                  <span class="tech-tag">Dynamic Slicers</span>
+                  <span class="tech-tag">KPI Cards</span>
+                  <span class="tech-tag">Fraud Trends</span>
+                </div>
+
               </div>
 
-              <!-- Interactive Chart Preview for Project 2 -->
-              <div class="project-visual-panel">
-                <div class="dashboard-preview-card">
-                  <div class="panel-header">
-                    <div class="panel-title"><i class="fa-solid fa-table-cells"></i> Banking Transaction Matrix</div>
-                    <span class="dataset-tag">13 PivotTables</span>
+              <!-- Right Column: Interactive Chart Visualization Preview -->
+              <div class="project-interactive-preview">
+                <div class="chart-display-card">
+                  <div class="chart-card-top">
+                    <span class="chart-badge"><i class="fa-solid fa-table-cells"></i> 13 PivotTables Matrix</span>
+                    <span class="chart-legend-indicator">Volume vs. Payment Channel</span>
                   </div>
-                  <div class="chart-wrapper">
-                    <canvas id="bankingAnalysisChart" width="300" height="220" aria-label="Bar chart showing transaction breakdown"></canvas>
+                  
+                  <div class="canvas-container">
+                    <canvas id="bankingBarChart" width="300" height="240" aria-label="Bar chart showing payment channel distribution and fraud breakdown"></canvas>
                   </div>
-                  <div class="excel-feature-box">
-                    <div class="excel-feature-row">
-                      <i class="fa-solid fa-check text-accent"></i>
-                      <span>Custom <code>Year-Month</code> longitudinal time dimension</span>
-                    </div>
-                    <div class="excel-feature-row">
-                      <i class="fa-solid fa-check text-accent"></i>
-                      <span>Payment mode volume vs. fraud distribution breakdown</span>
-                    </div>
-                    <div class="excel-feature-row">
-                      <i class="fa-solid fa-check text-accent"></i>
-                      <span>Regional cross-tabulation with dynamic slicer filters</span>
+
+                  <div class="genre-distribution-bar">
+                    <span class="bar-title">Excel Analytical Architecture:</span>
+                    <div class="genre-chips">
+                      <span class="g-chip">Year-Month Field</span>
+                      <span class="g-chip">Channel Cross-Tab</span>
+                      <span class="g-chip">Fraud Slicers</span>
                     </div>
                   </div>
                 </div>
               </div>
+
             </div>
           </article>
 
-          <!-- PROJECT 3: Hotel Reservation Operations -->
-          <article class="project-card">
-            <div class="project-header">
-              <div class="project-title-area">
-                <span class="project-badge sql-badge"><i class="fa-solid fa-database"></i> MySQL &bull; Relational SQL</span>
-                <h3 class="project-title">Hotel Reservation Operations Analytics</h3>
-                <p class="project-subtitle">Relational Database Architecture, 30+ Advanced SQL Queries &amp; Operational Guest Intelligence</p>
+          <!-- PROJECT 3: Hotel Reservation Operations Analytics -->
+          <article class="project-3d-card tilt-card" data-tilt data-tilt-max="8" data-tilt-glare data-tilt-max-glare="0.2">
+            <div class="card-ambient-glow"></div>
+            
+            <div class="project-card-header">
+              <div class="project-meta-left">
+                <span class="project-tag sql-tag"><i class="fa-solid fa-database"></i> MySQL &bull; Relational SQL</span>
+                <h3 class="project-heading">Hotel Reservation Operations Analytics</h3>
+                <p class="project-subheading">Relational Database Architecture, 30+ Advanced SQL Queries &amp; Operational Guest Intelligence</p>
               </div>
-              <div class="project-links">
-                <a href="https://github.com/Dharmanalokesh" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
-                  <i class="fa-brands fa-github"></i> View GitHub
+              <div class="project-links-right">
+                <a href="https://github.com/Dharmanalokesh" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline" title="GitHub Repository">
+                  <i class="fa-brands fa-github"></i> <span>GitHub</span>
                 </a>
+                <button class="btn btn-sm btn-primary inspect-project-btn" data-project="hotel">
+                  <i class="fa-solid fa-expand"></i> <span>Inspect Dossier</span>
+                </button>
               </div>
             </div>
 
-            <div class="project-body-grid">
-              <div class="project-narrative">
+            <div class="project-card-body">
+              
+              <!-- Left Column: Problem, Execution, Insights -->
+              <div class="project-details-column">
                 
-                <div class="info-block">
-                  <h4 class="info-label"><i class="fa-solid fa-triangle-exclamation"></i> Problem Statement</h4>
-                  <p class="info-text">
-                    Hospitality operations generate vast operational logs regarding room inventory, guest reservations, check-ins, cancellations, and specialized requests. Without a normalized relational schema and structured query pipelines, room yield and cancellation risks cannot be systematically mitigated.
+                <div class="project-spec-item">
+                  <h4 class="spec-title"><i class="fa-solid fa-microscope text-accent"></i> Analytical Objective &amp; Problem</h4>
+                  <p class="spec-content">
+                    Hospitality enterprises handle high-volume reservation logs across multiple entities: guest profiles, room categories, booking dates, cancellations, and service requests. Normalized relational schema design is critical to avoid data redundancy and track cancellation risks.
                   </p>
                 </div>
 
-                <div class="info-block">
-                  <h4 class="info-label"><i class="fa-solid fa-gears"></i> Key Analysis &amp; Technical Execution</h4>
-                  <ul class="project-bullet-list">
+                <div class="project-spec-item">
+                  <h4 class="spec-title"><i class="fa-solid fa-gears text-accent"></i> Key Technical Execution (Resume Verified)</h4>
+                  <ul class="spec-bullets">
                     <li>
-                      <strong>Relational Schema Engineering:</strong> Designed and implemented a relational MySQL database with <strong>6 interconnected tables</strong> and <strong>6+ primary/foreign key relationships</strong> to manage 7,000+ hotel reservation records.
+                      <strong>Relational Schema Engineering:</strong> Designed and implemented a relational MySQL database with <strong>6 interconnected tables</strong> and <strong>6+ primary/foreign key relationships</strong> to manage 7,000+ hotel records.
                     </li>
                     <li>
                       <strong>Data Ingestion &amp; Integrity Validation:</strong> Imported and validated <strong>7,045+ records</strong> with strict data type conversion, date handling, and constraint integrity checks.
                     </li>
                     <li>
-                      <strong>30+ Advanced SQL Queries:</strong> Wrote and executed <strong>30+ SQL queries</strong> utilizing multi-table <code>JOINs</code>, <code>GROUP BY</code>, aggregate functions (<code>COUNT</code>, <code>SUM</code>, <code>AVG</code>), <code>CASE WHEN</code> conditional logic, <code>HAVING</code> filters, and date functions to analyze booking demand, guest behavior, and room utilization.
+                      <strong>30+ Advanced SQL Queries:</strong> Wrote and executed 30+ SQL queries utilizing multi-table <code>JOINs</code>, <code>GROUP BY</code>, aggregate functions (<code>COUNT</code>, <code>SUM</code>, <code>AVG</code>), <code>CASE WHEN</code> conditional logic, <code>HAVING</code>, and date functions to analyze booking demand, guest behavior, and room utilization.
                     </li>
                     <li>
-                      <strong>Operational Pattern Discovery:</strong> Analyzed <strong>2,800 bookings</strong> and <strong>3,200 stay records</strong> to uncover patterns in cancellations, no-shows, and service requests, providing data support for operational decision-making.
+                      <strong>Operational Pattern Analysis:</strong> Analyzed <strong>2,800 bookings</strong> and <strong>3,200 stay records</strong> to uncover patterns in cancellations, no-shows, and service requests, supporting operational decision-making.
                     </li>
                   </ul>
                 </div>
 
-                <div class="info-block">
-                  <h4 class="info-label"><i class="fa-solid fa-square-poll-vertical"></i> Important Results &amp; Data Insights</h4>
-                  <div class="results-grid">
-                    <div class="result-stat-box">
-                      <span class="res-num">7,045+</span>
-                      <span class="res-desc">Records Ingested &amp; Validated</span>
-                    </div>
-                    <div class="result-stat-box">
-                      <span class="res-num">6 Tables</span>
-                      <span class="res-desc">6+ PK/FK Relationships</span>
-                    </div>
-                    <div class="result-stat-box">
-                      <span class="res-num">30+</span>
-                      <span class="res-desc">Complex SQL Queries Run</span>
-                    </div>
-                    <div class="result-stat-box">
-                      <span class="res-num">2,800 &amp; 3,200</span>
-                      <span class="res-desc">Bookings &amp; Stays Analyzed</span>
-                    </div>
+                <!-- Verified Key Insights Box -->
+                <div class="project-insights-box">
+                  <div class="insight-stat">
+                    <span class="i-val">7,045+</span>
+                    <span class="i-lbl">Records Validated</span>
                   </div>
-                  <p class="key-finding-text">
-                    <i class="fa-solid fa-circle-check text-accent"></i> <strong>Decision Support:</strong> Identified critical patterns in customer cancellations, no-show probabilities, and service request frequency to optimize front-desk allocation and room inventory.
-                  </p>
+                  <div class="insight-stat">
+                    <span class="i-val">6 Tables</span>
+                    <span class="i-lbl">6+ PK/FK Relations</span>
+                  </div>
+                  <div class="insight-stat">
+                    <span class="i-val">30+</span>
+                    <span class="i-lbl">Advanced SQL Queries</span>
+                  </div>
+                  <div class="insight-stat">
+                    <span class="i-val">2,800 &amp; 3,200</span>
+                    <span class="i-lbl">Bookings &amp; Stays</span>
+                  </div>
                 </div>
 
-                <div class="tech-stack-row">
-                  <span class="stack-tag"><i class="fa-solid fa-database"></i> MySQL</span>
-                  <span class="stack-tag">Relational Database Design</span>
-                  <span class="stack-tag">6 Interconnected Tables</span>
-                  <span class="stack-tag">30+ SQL Queries</span>
-                  <span class="stack-tag">JOINs &amp; GROUP BY</span>
-                  <span class="stack-tag">CASE WHEN &amp; HAVING</span>
-                  <span class="stack-tag">Integrity Constraints</span>
+                <div class="project-key-takeaway">
+                  <i class="fa-solid fa-circle-check text-accent"></i>
+                  <span><strong>Decision Support:</strong> Identified critical patterns in customer cancellations and service requests, optimizing inventory forecasting and front-desk resource allocation.</span>
                 </div>
+
+                <div class="project-tags-strip">
+                  <span class="tech-tag"><i class="fa-solid fa-database"></i> MySQL</span>
+                  <span class="tech-tag">Relational Database Design</span>
+                  <span class="tech-tag">6 Interconnected Tables</span>
+                  <span class="tech-tag">30+ SQL Queries</span>
+                  <span class="tech-tag">JOINs &amp; GROUP BY</span>
+                  <span class="tech-tag">CASE WHEN &amp; HAVING</span>
+                  <span class="tech-tag">Data Type Conversion</span>
+                </div>
+
               </div>
 
-              <!-- Interactive SQL Code / Schema Preview for Project 3 -->
-              <div class="project-visual-panel">
-                <div class="dashboard-preview-card">
-                  <div class="panel-header">
-                    <div class="panel-title"><i class="fa-solid fa-code"></i> SQL Operational Query Sample</div>
-                    <span class="dataset-tag">MySQL Relational</span>
+              <!-- Right Column: Interactive SQL Terminal Window -->
+              <div class="project-interactive-preview">
+                <div class="sql-preview-terminal">
+                  <div class="terminal-bar">
+                    <span class="term-dot red"></span>
+                    <span class="term-dot yellow"></span>
+                    <span class="term-dot green"></span>
+                    <span class="term-title">hotel_cancellation_analysis.sql</span>
+                    <button class="terminal-copy-btn copy-trigger" data-copy="SELECT r.room_type, COUNT(b.booking_id) AS total_bookings, SUM(CASE WHEN b.status = 'Canceled' THEN 1 ELSE 0 END) AS cancellations, ROUND(SUM(CASE WHEN b.status = 'Canceled' THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS cancel_rate_pct FROM bookings b JOIN rooms r ON b.room_id = r.room_id GROUP BY r.room_type HAVING COUNT(b.booking_id) >= 50 ORDER BY cancel_rate_pct DESC;" title="Copy SQL"><i class="fa-regular fa-copy"></i></button>
                   </div>
-                  <div class="code-preview-window">
-                    <div class="code-bar">
-                      <span class="dot red"></span>
-                      <span class="dot yellow"></span>
-                      <span class="dot green"></span>
-                      <span class="code-title">hotel_cancellation_analysis.sql</span>
-                    </div>
-                    <pre class="code-content"><code><span class="sql-kw">SELECT</span> 
+                  
+                  <pre class="sql-code-block"><code><span class="kw">SELECT</span> 
     r.room_type,
-    <span class="sql-fn">COUNT</span>(b.booking_id) <span class="sql-kw">AS</span> total_bookings,
-    <span class="sql-fn">SUM</span>(<span class="sql-kw">CASE WHEN</span> b.status = <span class="sql-str">'Canceled'</span> <span class="sql-kw">THEN</span> 1 <span class="sql-kw">ELSE</span> 0 <span class="sql-kw">END</span>) <span class="sql-kw">AS</span> cancellations,
-    <span class="sql-fn">ROUND</span>(<span class="sql-fn">SUM</span>(<span class="sql-kw">CASE WHEN</span> b.status = <span class="sql-str">'Canceled'</span> <span class="sql-kw">THEN</span> 1 <span class="sql-kw">ELSE</span> 0 <span class="sql-kw">END</span>) * 100.0 / <span class="sql-fn">COUNT</span>(*), 2) <span class="sql-kw">AS</span> cancel_rate_pct
-<span class="sql-kw">FROM</span> bookings b
-<span class="sql-kw">JOIN</span> rooms r <span class="sql-kw">ON</span> b.room_id = r.room_id
-<span class="sql-kw">GROUP BY</span> r.room_type
-<span class="sql-kw">HAVING COUNT</span>(b.booking_id) &gt;= 50
-<span class="sql-kw">ORDER BY</span> cancel_rate_pct <span class="sql-kw">DESC</span>;</code></pre>
-                  </div>
-                  <div class="sql-metric-strip">
-                    <div class="sql-badge-chip"><i class="fa-solid fa-check"></i> 6 Normalized Tables</div>
-                    <div class="sql-badge-chip"><i class="fa-solid fa-check"></i> Date Conversions</div>
-                    <div class="sql-badge-chip"><i class="fa-solid fa-check"></i> Primary/Foreign Keys</div>
+    <span class="fn">COUNT</span>(b.booking_id) <span class="kw">AS</span> total_bookings,
+    <span class="fn">SUM</span>(<span class="kw">CASE WHEN</span> b.status = <span class="str">'Canceled'</span> 
+             <span class="kw">THEN</span> 1 <span class="kw">ELSE</span> 0 <span class="kw">END</span>) <span class="kw">AS</span> cancellations,
+    <span class="fn">ROUND</span>(<span class="fn">SUM</span>(<span class="kw">CASE WHEN</span> b.status = <span class="str">'Canceled'</span> 
+                   <span class="kw">THEN</span> 1 <span class="kw">ELSE</span> 0 <span class="kw">END</span>) * 100.0 / <span class="fn">COUNT</span>(*), 2) <span class="kw">AS</span> cancel_rate_pct
+<span class="kw">FROM</span> bookings b
+<span class="kw">JOIN</span> rooms r <span class="kw">ON</span> b.room_id = r.room_id
+<span class="kw">GROUP BY</span> r.room_type
+<span class="kw">HAVING COUNT</span>(b.booking_id) &gt;= 50
+<span class="kw">ORDER BY</span> cancel_rate_pct <span class="kw">DESC</span>;</code></pre>
+
+                  <div class="sql-terminal-meta">
+                    <span class="sql-pill"><i class="fa-solid fa-check"></i> 6 Tables Normalized</span>
+                    <span class="sql-pill"><i class="fa-solid fa-check"></i> 7,045+ Records</span>
+                    <span class="sql-pill"><i class="fa-solid fa-check"></i> Integrity Checks</span>
                   </div>
                 </div>
               </div>
+
             </div>
           </article>
 
         </div>
+
       </div>
     </section>
 
-    <!-- ==================== 5. INTERNSHIP EXPERIENCE SECTION ==================== -->
-    <section class="section experience-section" id="experience">
+    <!-- ==========================================================================
+         5. DEDICATED DATA VISUALIZATION & ANALYTICS COMMAND CENTER
+         ========================================================================== -->
+    <section class="section command-center-section" id="command-center">
       <div class="container">
-        <div class="section-header">
-          <span class="section-subtitle"><i class="fa-solid fa-briefcase"></i> Work History</span>
-          <h2 class="section-title">Internship Experience</h2>
-          <p class="section-desc">Hands-on industry experience handling real-world datasets, cloud workflows, and cross-functional analytics.</p>
-          <div class="section-bar"></div>
+        
+        <div class="section-title-wrap">
+          <div class="section-tag"><i class="fa-solid fa-terminal"></i> COMMAND CENTER // 04</div>
+          <h2 class="section-heading">Futuristic Analytics Command Hub</h2>
+          <p class="section-lead">Live interactive telemetry console visualizing real metrics from Dharmana Lokesh's project portfolio.</p>
         </div>
 
-        <div class="timeline">
-
-          <!-- Experience 1: Skill Dzire -->
-          <div class="timeline-item">
-            <div class="timeline-marker">
-              <i class="fa-solid fa-brain"></i>
+        <div class="command-hub-card">
+          
+          <!-- Command Hub Header & Status Bar -->
+          <div class="hub-header-bar">
+            <div class="hub-status-left">
+              <span class="beacon-pulse"><span class="pulse-core"></span></span>
+              <span class="hub-feed-title">ACTIVE ANALYTICAL STREAM: <strong>CANDIDATE REPRODUCIBLE DATA</strong></span>
             </div>
-            <div class="timeline-card">
-              <div class="timeline-head">
-                <div>
-                  <h3 class="role-title">Artificial Intelligence Intern</h3>
-                  <h4 class="company-title"><i class="fa-solid fa-building"></i> Skill Dzire</h4>
+            
+            <!-- Command View Tabs -->
+            <div class="hub-tab-controls" role="tablist">
+              <button class="hub-tab-btn active" data-view="prime">
+                <i class="fa-solid fa-film"></i> Prime Video (9,668 Titles)
+              </button>
+              <button class="hub-tab-btn" data-view="banking">
+                <i class="fa-solid fa-building-columns"></i> Banking Fraud (500+ Tx)
+              </button>
+              <button class="hub-tab-btn" data-view="hotel">
+                <i class="fa-solid fa-hotel"></i> Hotel Operations (7,045+ Rec)
+              </button>
+            </div>
+          </div>
+
+          <!-- KPI Metric Telemetry Row -->
+          <div class="hub-kpi-bar">
+            <div class="kpi-pod">
+              <span class="pod-label">TOTAL RECORDS PROCESS</span>
+              <span class="pod-val text-accent">17,213+</span>
+              <span class="pod-sub">Prime + Hotel + Banking</span>
+            </div>
+            <div class="kpi-pod">
+              <span class="pod-label">DATABASE QUERIES RUN</span>
+              <span class="pod-val text-accent">30+</span>
+              <span class="pod-sub">MySQL Complex Joins</span>
+            </div>
+            <div class="kpi-pod">
+              <span class="pod-label">PIVOT TABLES ENGINEERED</span>
+              <span class="pod-val text-accent">13</span>
+              <span class="pod-sub">Excel Transaction Models</span>
+            </div>
+            <div class="kpi-pod">
+              <span class="pod-label">INTERNSHIP DATASETS</span>
+              <span class="pod-val text-accent">30+</span>
+              <span class="pod-sub">Techwing (1,000+ rec each)</span>
+            </div>
+            <div class="kpi-pod">
+              <span class="pod-label">CLOUD INTEGRATIONS</span>
+              <span class="pod-val text-accent">10+</span>
+              <span class="pod-sub">AWS Core Services</span>
+            </div>
+          </div>
+
+          <!-- Dynamic Visual Display Stage -->
+          <div class="hub-display-stage">
+            
+            <!-- View 1: Prime Video Content Analysis -->
+            <div class="hub-view-panel active" id="view-prime">
+              <div class="view-grid">
+                <div class="chart-box">
+                  <div class="chart-header">
+                    <h4><i class="fa-solid fa-chart-pie text-accent"></i> Content Category Breakdown (7,814 Movies vs 1,854 TV Shows)</h4>
+                    <span class="dataset-source-tag">Source: 9,668-title Amazon Prime Dataset</span>
+                  </div>
+                  <div class="chart-canvas-wrap">
+                    <canvas id="hubPrimeChart" width="400" height="280"></canvas>
+                  </div>
                 </div>
-                <div class="timeline-duration">
-                  <span class="duration-badge"><i class="fa-regular fa-calendar-days"></i> Nov 2025 – Apr 2026</span>
+
+                <div class="chart-box">
+                  <div class="chart-header">
+                    <h4><i class="fa-solid fa-chart-column text-accent"></i> Leading Genre Dominance &amp; Distribution</h4>
+                    <span class="dataset-source-tag">Verified Findings: EDA in Seaborn</span>
+                  </div>
+                  <div class="chart-canvas-wrap">
+                    <canvas id="hubGenreChart" width="400" height="280"></canvas>
+                  </div>
                 </div>
               </div>
-              
-              <ul class="timeline-bullets">
+            </div>
+
+            <!-- View 2: Banking Transactions & Fraud -->
+            <div class="hub-view-panel" id="view-banking">
+              <div class="view-grid">
+                <div class="chart-box">
+                  <div class="chart-header">
+                    <h4><i class="fa-solid fa-chart-line text-accent"></i> Transaction Volume &amp; Velocity (Year-Month Field)</h4>
+                    <span class="dataset-source-tag">Source: 500+ Banking Transactions</span>
+                  </div>
+                  <div class="chart-canvas-wrap">
+                    <canvas id="hubBankingTrendChart" width="400" height="280"></canvas>
+                  </div>
+                </div>
+
+                <div class="chart-box">
+                  <div class="chart-header">
+                    <h4><i class="fa-solid fa-shield-virus text-accent"></i> Fraud Pattern Distribution by Payment Mode</h4>
+                    <span class="dataset-source-tag">Built from 13 PivotTables</span>
+                  </div>
+                  <div class="chart-canvas-wrap">
+                    <canvas id="hubBankingFraudChart" width="400" height="280"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- View 3: Hotel Operations & Cancellation Analytics -->
+            <div class="hub-view-panel" id="view-hotel">
+              <div class="view-grid">
+                <div class="chart-box">
+                  <div class="chart-header">
+                    <h4><i class="fa-solid fa-percent text-accent"></i> Cancellation Rate by Room Type &amp; Demand</h4>
+                    <span class="dataset-source-tag">Source: 7,045+ Records / 30+ SQL Queries</span>
+                  </div>
+                  <div class="chart-canvas-wrap">
+                    <canvas id="hubHotelChart" width="400" height="280"></canvas>
+                  </div>
+                </div>
+
+                <div class="chart-box">
+                  <div class="chart-header">
+                    <h4><i class="fa-solid fa-sitemap text-accent"></i> MySQL Relational Schema Topology (6 Interconnected Tables)</h4>
+                    <span class="dataset-source-tag">6+ PK/FK Foreign Key Relationships</span>
+                  </div>
+                  <div class="schema-topology-box">
+                    <div class="schema-node" title="Primary Booking Entity">
+                      <i class="fa-solid fa-book-bookmark"></i>
+                      <span>bookings (PK: booking_id)</span>
+                    </div>
+                    <div class="schema-connector"><i class="fa-solid fa-arrows-left-right"></i></div>
+                    <div class="schema-node" title="Guest Dimension">
+                      <i class="fa-solid fa-users"></i>
+                      <span>guests (PK: guest_id)</span>
+                    </div>
+                    <div class="schema-connector"><i class="fa-solid fa-arrows-left-right"></i></div>
+                    <div class="schema-node" title="Room Inventory">
+                      <i class="fa-solid fa-door-open"></i>
+                      <span>rooms (PK: room_id)</span>
+                    </div>
+                    <div class="schema-node" title="Stay Tracking">
+                      <i class="fa-solid fa-bed"></i>
+                      <span>stays (FK: booking_id)</span>
+                    </div>
+                    <div class="schema-connector"><i class="fa-solid fa-arrows-left-right"></i></div>
+                    <div class="schema-node" title="Payment Entity">
+                      <i class="fa-solid fa-credit-card"></i>
+                      <span>payments (FK: booking_id)</span>
+                    </div>
+                    <div class="schema-connector"><i class="fa-solid fa-arrows-left-right"></i></div>
+                    <div class="schema-node" title="Service Requests">
+                      <i class="fa-solid fa-bell-concierge"></i>
+                      <span>service_requests (FK: stay_id)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="hub-footer-status">
+            <span><i class="fa-solid fa-shield-halved text-accent"></i> All telemetry grounded strictly in Dharmana Lokesh's resume projects.</span>
+            <span class="live-clock" id="live-telemetry-clock">LIVE FEED</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         6. ANALYTICS PIPELINE ARCHITECTURE (LIFECYCLE)
+         ========================================================================== -->
+    <section class="section pipeline-section" id="pipeline">
+      <div class="container">
+        
+        <div class="section-title-wrap">
+          <div class="section-tag"><i class="fa-solid fa-route"></i> METHODOLOGY // 05</div>
+          <h2 class="section-heading">End-to-End Analytical Pipeline</h2>
+          <p class="section-lead">The systematic workflow applied by Dharmana Lokesh to transition raw records into decision-ready business intelligence.</p>
+        </div>
+
+        <div class="pipeline-track">
+          
+          <!-- Stage 1 -->
+          <div class="pipeline-stage" data-tilt>
+            <div class="stage-step">01</div>
+            <div class="stage-icon"><i class="fa-solid fa-file-import"></i></div>
+            <h3 class="stage-name">Data Ingestion</h3>
+            <p class="stage-desc">Importing raw multi-source telemetry from CSVs, flat files, Excel spreadsheets, and MySQL relational schemas exceeding 9,000+ records.</p>
+            <div class="stage-tags">
+              <span>CSV Ingestion</span>
+              <span>MySQL Import</span>
+              <span>Python IO</span>
+            </div>
+          </div>
+
+          <!-- Connector -->
+          <div class="stage-arrow"><i class="fa-solid fa-angle-right"></i></div>
+
+          <!-- Stage 2 -->
+          <div class="pipeline-stage" data-tilt>
+            <div class="stage-step">02</div>
+            <div class="stage-icon"><i class="fa-solid fa-broom"></i></div>
+            <h3 class="stage-name">Cleaning &amp; Validation</h3>
+            <p class="stage-desc">Imputing nulls, casting data types, sanitizing date fields, duplicate pruning, and running relational integrity constraint checks.</p>
+            <div class="stage-tags">
+              <span>Pandas Cleaning</span>
+              <span>Data Validation</span>
+              <span>Integrity Checks</span>
+            </div>
+          </div>
+
+          <!-- Connector -->
+          <div class="stage-arrow"><i class="fa-solid fa-angle-right"></i></div>
+
+          <!-- Stage 3 -->
+          <div class="pipeline-stage" data-tilt>
+            <div class="stage-step">03</div>
+            <div class="stage-icon"><i class="fa-solid fa-diagram-project"></i></div>
+            <h3 class="stage-name">Transformation &amp; Modeling</h3>
+            <p class="stage-desc">Constructing 6 normalized tables with PK/FK links, engineering time dimensions (Year-Month), and formulating calculated fields.</p>
+            <div class="stage-tags">
+              <span>Schema Design</span>
+              <span>Year-Month Field</span>
+              <span>6 PK/FK Relations</span>
+            </div>
+          </div>
+
+          <!-- Connector -->
+          <div class="stage-arrow"><i class="fa-solid fa-angle-right"></i></div>
+
+          <!-- Stage 4 -->
+          <div class="pipeline-stage" data-tilt>
+            <div class="stage-step">04</div>
+            <div class="stage-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+            <h3 class="stage-name">Exploratory Analysis (EDA)</h3>
+            <p class="stage-desc">Executing 30+ complex SQL queries (JOINs, GROUP BY, HAVING, CASE), 13 PivotTables, and statistical distributions with Seaborn.</p>
+            <div class="stage-tags">
+              <span>30+ SQL Queries</span>
+              <span>13 PivotTables</span>
+              <span>Univariate/Bivariate</span>
+            </div>
+          </div>
+
+          <!-- Connector -->
+          <div class="stage-arrow"><i class="fa-solid fa-angle-right"></i></div>
+
+          <!-- Stage 5 -->
+          <div class="pipeline-stage" data-tilt>
+            <div class="stage-step">05</div>
+            <div class="stage-icon"><i class="fa-solid fa-chart-pie"></i></div>
+            <h3 class="stage-name">Interactive BI &amp; Insights</h3>
+            <p class="stage-desc">Engineering Power BI dashboards with DAX measures (CALCULATE, COUNTROWS), dynamic slicers, and actionable executive insights.</p>
+            <div class="stage-tags">
+              <span>Power BI DAX</span>
+              <span>KPI Dashboards</span>
+              <span>Decision Support</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         7. INTERNSHIP EXPERIENCE: MISSIONS & TIMELINE
+         ========================================================================== -->
+    <section class="section experience-section" id="experience">
+      <div class="container">
+        
+        <div class="section-title-wrap">
+          <div class="section-tag"><i class="fa-solid fa-briefcase"></i> INDUSTRY HISTORY // 06</div>
+          <h2 class="section-heading">Internship Experience</h2>
+          <p class="section-lead">Hands-on industry engagements handling real-world datasets, cloud workflows, and cross-functional analytics.</p>
+        </div>
+
+        <div class="timeline-container">
+          
+          <!-- Experience 1: Skill Dzire -->
+          <div class="timeline-card-item">
+            <div class="timeline-orbit">
+              <div class="orbit-dot"></div>
+              <div class="orbit-line"></div>
+            </div>
+            
+            <div class="exp-card tilt-card" data-tilt>
+              <div class="exp-card-header">
+                <div class="exp-meta">
+                  <span class="exp-role">Artificial Intelligence Intern</span>
+                  <h3 class="exp-company"><i class="fa-solid fa-building"></i> Skill Dzire</h3>
+                </div>
+                <div class="exp-time">
+                  <span class="time-badge"><i class="fa-regular fa-calendar-days"></i> Nov 2025 – Apr 2026</span>
+                </div>
+              </div>
+
+              <ul class="exp-bullets">
                 <li>
                   <strong>Dataset Collection &amp; Cleaning:</strong> Collected, cleaned, and validated real-world datasets using Python (Pandas, NumPy), improving data accuracy and consistency for downstream analysis.
                 </li>
@@ -889,446 +1362,542 @@
                 </li>
               </ul>
 
-              <div class="timeline-tags">
-                <span class="tag">Python</span>
-                <span class="tag">Pandas</span>
-                <span class="tag">NumPy</span>
-                <span class="tag">Data Cleaning</span>
-                <span class="tag">EDA</span>
-                <span class="tag">Trend Identification</span>
+              <div class="exp-tags">
+                <span class="tech-tag"><i class="fa-brands fa-python"></i> Python</span>
+                <span class="tech-tag">Pandas</span>
+                <span class="tech-tag">NumPy</span>
+                <span class="tech-tag">Data Cleaning</span>
+                <span class="tech-tag">EDA</span>
+                <span class="tech-tag">Trend Identification</span>
               </div>
             </div>
           </div>
 
           <!-- Experience 2: Techwing -->
-          <div class="timeline-item">
-            <div class="timeline-marker">
-              <i class="fa-solid fa-cloud"></i>
+          <div class="timeline-card-item">
+            <div class="timeline-orbit">
+              <div class="orbit-dot"></div>
+              <div class="orbit-line"></div>
             </div>
-            <div class="timeline-card">
-              <div class="timeline-head">
-                <div>
-                  <h3 class="role-title">Gen AI &amp; AWS Intern</h3>
-                  <h4 class="company-title"><i class="fa-solid fa-building"></i> Techwing</h4>
+            
+            <div class="exp-card tilt-card" data-tilt>
+              <div class="exp-card-header">
+                <div class="exp-meta">
+                  <span class="exp-role">Gen AI &amp; AWS Intern</span>
+                  <h3 class="exp-company"><i class="fa-solid fa-building"></i> Techwing</h3>
                 </div>
-                <div class="timeline-duration">
-                  <span class="duration-badge"><i class="fa-regular fa-calendar-days"></i> Aug 2024 – Jul 2025</span>
+                <div class="exp-time">
+                  <span class="time-badge"><i class="fa-regular fa-calendar-days"></i> Aug 2024 – Jul 2025</span>
                 </div>
               </div>
-              
-              <ul class="timeline-bullets">
+
+              <ul class="exp-bullets">
                 <li>
-                  <strong>Scaled Data Analysis (30+ Datasets):</strong> Analyzed and visualized <strong>30+ datasets (1,000+ records each)</strong> using Pandas, NumPy, Seaborn, and Matplotlib to support AI-enabled, cloud-based solutions.
+                  <strong>Large-Scale Dataset Visualization (30+ Datasets):</strong> Analyzed and visualized <strong>30+ datasets (1,000+ records each)</strong> using Pandas, NumPy, Seaborn, and Matplotlib to support AI-enabled, cloud-based solutions.
                 </li>
                 <li>
-                  <strong>Cloud Data Processing (10+ AWS Services):</strong> Worked with <strong>10+ AWS services</strong> (including EC2, Lambda, LightSail, S3, IAM, etc.) on data processing workflows, gaining hands-on exposure to cloud-based analytics.
+                  <strong>Cloud Processing (10+ AWS Services):</strong> Worked with <strong>10+ AWS services</strong> (including EC2, Lambda, LightSail, S3, IAM, etc.) on data processing workflows, gaining hands-on exposure to cloud-based analytics.
                 </li>
                 <li>
                   <strong>Cross-Functional Collaboration:</strong> Collaborated with cross-functional teams to interpret business requirements and deliver accurate analytical outputs.
                 </li>
               </ul>
 
-              <div class="timeline-tags">
-                <span class="tag">AWS (10+ Services)</span>
-                <span class="tag">EC2 &amp; Lambda</span>
-                <span class="tag">S3 &amp; LightSail</span>
-                <span class="tag">Pandas &amp; NumPy</span>
-                <span class="tag">Seaborn &amp; Matplotlib</span>
-                <span class="tag">Cloud Data Processing</span>
+              <div class="exp-tags">
+                <span class="tech-tag"><i class="fa-brands fa-aws"></i> AWS (10+ Services)</span>
+                <span class="tech-tag">EC2 &amp; Lambda</span>
+                <span class="tech-tag">S3 &amp; LightSail</span>
+                <span class="tech-tag">Pandas &amp; NumPy</span>
+                <span class="tech-tag">Seaborn &amp; Matplotlib</span>
+                <span class="tech-tag">Cloud Workflows</span>
               </div>
             </div>
           </div>
 
         </div>
+
       </div>
     </section>
 
-    <!-- ==================== 6. CERTIFICATIONS SECTION ==================== -->
+    <!-- ==========================================================================
+         8. CERTIFICATIONS: 3D ACCREDITATION CARDS
+         ========================================================================== -->
     <section class="section cert-section" id="certifications">
       <div class="container">
-        <div class="section-header">
-          <span class="section-subtitle"><i class="fa-solid fa-award"></i> Verified Credentials</span>
-          <h2 class="section-title">Certifications</h2>
-          <p class="section-desc">Accredited certifications validating cloud architecture, Python programming, and data science methodologies.</p>
-          <div class="section-bar"></div>
+        
+        <div class="section-title-wrap">
+          <div class="section-tag"><i class="fa-solid fa-award"></i> ACCREDITATION // 07</div>
+          <h2 class="section-heading">Verified Certifications</h2>
+          <p class="section-lead">Industry and institutional credentials validating cloud engineering, Python scripting, and data science methodologies.</p>
         </div>
 
-        <div class="cert-grid">
+        <div class="cert-cards-grid">
           
           <!-- Cert 1: AWS -->
-          <div class="cert-card">
-            <div class="cert-icon-wrap aws-icon">
-              <i class="fa-brands fa-aws"></i>
+          <div class="cert-holo-card tilt-card" data-tilt>
+            <div class="cert-glow"></div>
+            <div class="cert-card-top">
+              <div class="cert-issuer-badge aws-bg"><i class="fa-brands fa-aws"></i></div>
+              <span class="cert-verified-pill"><i class="fa-solid fa-circle-check"></i> Verified</span>
             </div>
-            <div class="cert-details">
-              <span class="cert-issuer">Amazon Web Services</span>
-              <h3 class="cert-name">AWS Certified Cloud Practitioner</h3>
-              <p class="cert-desc">Demonstrated knowledge of AWS Cloud concepts, 10+ core cloud services (EC2, S3, Lambda, IAM), security, architecture, and cloud data workflows.</p>
-              <div class="cert-meta">
-                <span class="badge-verified"><i class="fa-solid fa-circle-check"></i> Industry Certification</span>
-              </div>
+            <span class="cert-org">Amazon Web Services</span>
+            <h3 class="cert-title">AWS Certified Cloud Practitioner</h3>
+            <p class="cert-summary">Demonstrated fluency with AWS cloud infrastructure, security, architecture, and 10+ core services (EC2, S3, Lambda, IAM) applied to data workflows.</p>
+            <div class="cert-meta-bottom">
+              <span class="badge-accent">Cloud Infrastructure</span>
             </div>
           </div>
 
           <!-- Cert 2: IBM Python for Data Science -->
-          <div class="cert-card">
-            <div class="cert-icon-wrap ibm-icon">
-              <i class="fa-solid fa-chart-simple"></i>
+          <div class="cert-holo-card tilt-card" data-tilt>
+            <div class="cert-glow"></div>
+            <div class="cert-card-top">
+              <div class="cert-issuer-badge ibm-bg"><i class="fa-solid fa-chart-line"></i></div>
+              <span class="cert-verified-pill"><i class="fa-solid fa-circle-check"></i> Verified</span>
             </div>
-            <div class="cert-details">
-              <span class="cert-issuer">IBM</span>
-              <h3 class="cert-name">Python for Data Science</h3>
-              <p class="cert-desc">Rigorous training in Python data structures, Pandas data manipulation, NumPy arrays, data loading, transformation, and exploratory analysis.</p>
-              <div class="cert-meta">
-                <span class="badge-verified"><i class="fa-solid fa-circle-check"></i> IBM Credential</span>
-              </div>
+            <span class="cert-org">IBM</span>
+            <h3 class="cert-title">Python for Data Science</h3>
+            <p class="cert-summary">Hands-on mastery of Python data structures, Pandas data manipulation, NumPy arrays, exploratory data analysis, and predictive workflows.</p>
+            <div class="cert-meta-bottom">
+              <span class="badge-accent">Data Science</span>
             </div>
           </div>
 
           <!-- Cert 3: Innomatics Python Programming -->
-          <div class="cert-card">
-            <div class="cert-icon-wrap innomatics-icon">
-              <i class="fa-brands fa-python"></i>
+          <div class="cert-holo-card tilt-card" data-tilt>
+            <div class="cert-glow"></div>
+            <div class="cert-card-top">
+              <div class="cert-issuer-badge innomatics-bg"><i class="fa-brands fa-python"></i></div>
+              <span class="cert-verified-pill"><i class="fa-solid fa-circle-check"></i> Verified</span>
             </div>
-            <div class="cert-details">
-              <span class="cert-issuer">Innomatics Research Labs</span>
-              <h3 class="cert-name">Python Programming</h3>
-              <p class="cert-desc">Mastery of core Python, object-oriented programming (OOP), file manipulation, exception handling, data structures, and algorithmic scripting.</p>
-              <div class="cert-meta">
-                <span class="badge-verified"><i class="fa-solid fa-circle-check"></i> Professional Certificate</span>
-              </div>
+            <span class="cert-org">Innomatics Research Labs</span>
+            <h3 class="cert-title">Python Programming</h3>
+            <p class="cert-summary">Comprehensive certification in advanced Python, object-oriented programming (OOP), file manipulation, exception handling, and algorithm engineering.</p>
+            <div class="cert-meta-bottom">
+              <span class="badge-accent">Programming Mastery</span>
             </div>
           </div>
 
           <!-- Cert 4: Skill Dzire AI -->
-          <div class="cert-card">
-            <div class="cert-icon-wrap ai-icon">
-              <i class="fa-solid fa-brain"></i>
+          <div class="cert-holo-card tilt-card" data-tilt>
+            <div class="cert-glow"></div>
+            <div class="cert-card-top">
+              <div class="cert-issuer-badge ai-bg"><i class="fa-solid fa-brain"></i></div>
+              <span class="cert-verified-pill"><i class="fa-solid fa-circle-check"></i> Verified</span>
             </div>
-            <div class="cert-details">
-              <span class="cert-issuer">Skill Dzire</span>
-              <h3 class="cert-name">Artificial Intelligence</h3>
-              <p class="cert-desc">Applied practical experience in dataset preparation, trend interpretation, analytical modeling, and real-world data problem-solving.</p>
-              <div class="cert-meta">
-                <span class="badge-verified"><i class="fa-solid fa-circle-check"></i> Internship Certificate</span>
-              </div>
+            <span class="cert-org">Skill Dzire</span>
+            <h3 class="cert-title">Artificial Intelligence</h3>
+            <p class="cert-summary">Applied training in real-world data preparation, exploratory data analysis, pattern recognition, and deadline-driven analytical projects.</p>
+            <div class="cert-meta-bottom">
+              <span class="badge-accent">Applied Analytics</span>
             </div>
           </div>
 
         </div>
+
       </div>
     </section>
 
-    <!-- ==================== 7. EDUCATION SECTION ==================== -->
+    <!-- ==========================================================================
+         9. EDUCATION: CINEMATIC TIMELINE
+         ========================================================================== -->
     <section class="section education-section" id="education">
       <div class="container">
-        <div class="section-header">
-          <span class="section-subtitle"><i class="fa-solid fa-graduation-cap"></i> Academic Background</span>
-          <h2 class="section-title">Education</h2>
-          <div class="section-bar"></div>
+        
+        <div class="section-title-wrap">
+          <div class="section-tag"><i class="fa-solid fa-graduation-cap"></i> ACADEMIC FOUNDATION // 08</div>
+          <h2 class="section-heading">Education</h2>
+          <p class="section-lead">Mathematical rigor and electronic engineering principles applied to computational data analysis.</p>
         </div>
 
-        <div class="education-card">
-          <div class="edu-icon-side">
-            <i class="fa-solid fa-graduation-cap"></i>
+        <div class="edu-card-wrap tilt-card" data-tilt>
+          <div class="edu-card-left">
+            <div class="edu-cap-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="edu-grade-pod">
+              <span class="grade-label">CUMULATIVE CGPA</span>
+              <span class="grade-number">8.06</span>
+              <span class="grade-max">/ 10.0</span>
+            </div>
           </div>
-          <div class="edu-body">
-            <div class="edu-header">
+
+          <div class="edu-card-right">
+            <div class="edu-heading-row">
               <div>
-                <h3 class="degree-title">B.Tech in Electronics and Communication Engineering</h3>
-                <h4 class="institute-title"><i class="fa-solid fa-university"></i> Godavari Institute of Engineering and Technology</h4>
+                <h3 class="degree-heading">B.Tech in Electronics and Communication Engineering</h3>
+                <h4 class="college-heading"><i class="fa-solid fa-university"></i> Godavari Institute of Engineering and Technology</h4>
               </div>
-              <div class="edu-timeline">
-                <span class="duration-badge"><i class="fa-regular fa-calendar-days"></i> Sep 2022 – Apr 2026</span>
-              </div>
-            </div>
-
-            <div class="edu-stats-row">
-              <div class="edu-stat-item">
-                <span class="edu-stat-label">Cumulative GPA:</span>
-                <span class="edu-stat-value cgpa-highlight">8.06 / 10.0</span>
-              </div>
-              <div class="edu-stat-item">
-                <span class="edu-stat-label">Graduation Year:</span>
-                <span class="edu-stat-value">Class of 2026 (Fresher)</span>
-              </div>
-              <div class="edu-stat-item">
-                <span class="edu-stat-label">Analytical Foundation:</span>
-                <span class="edu-stat-value">Signal Processing, Statistical Methods, Logic Design</span>
+              <div class="edu-period">
+                <span class="time-badge"><i class="fa-regular fa-calendar-days"></i> Sep 2022 – Apr 2026</span>
               </div>
             </div>
 
-            <p class="edu-summary">
-              Strong mathematical and computational foundation applied to data analytics. Completed multiple end-to-end analytics projects and industry internships during undergraduate coursework, maintaining consistent academic excellence (8.06 CGPA).
+            <p class="edu-description">
+              Graduating in the <strong>Class of 2026</strong> with consistent academic distinction (8.06 CGPA). Coursework built robust competencies in statistical methods, signals &amp; logic systems, algorithmic problem solving, and database structures. Completed two industry internships and four data analytics projects in parallel with undergraduate studies.
             </p>
+
+            <div class="edu-chips">
+              <span class="tech-tag"><i class="fa-solid fa-check text-accent"></i> Batch of 2026</span>
+              <span class="tech-tag"><i class="fa-solid fa-check text-accent"></i> 8.06 CGPA</span>
+              <span class="tech-tag"><i class="fa-solid fa-check text-accent"></i> Srikakulam, AP</span>
+              <span class="tech-tag"><i class="fa-solid fa-check text-accent"></i> Immediate Availability Post-Graduation</span>
+            </div>
           </div>
         </div>
+
       </div>
     </section>
 
-    <!-- ==================== 8. RESUME DOWNLOAD SECTION ==================== -->
+    <!-- ==========================================================================
+         10. RESUME EXPERIENCE: 3D DIGITAL RESUME CARD & EMBEDDED MODAL
+         ========================================================================== -->
     <section class="section resume-section" id="resume">
       <div class="container">
-        <div class="resume-cta-box">
-          <div class="resume-cta-content">
-            <div class="resume-badge"><i class="fa-solid fa-file-pdf"></i> Verified Resume</div>
-            <h2 class="resume-cta-title">Recruiting for 2026 Data Analyst Roles?</h2>
-            <p class="resume-cta-desc">
-              Download my official PDF resume directly to review complete project metrics, internship details, database proficiencies, and educational credentials.
-            </p>
+        
+        <div class="resume-showcase-box">
+          <div class="resume-box-glow"></div>
+          
+          <div class="resume-info-side">
+            <div class="sys-telemetry-badge">
+              <span class="telemetry-node"></span>
+              <span class="telemetry-label">OFFICIAL ATS RESUME // READY FOR REVIEW</span>
+            </div>
             
-            <div class="resume-btn-group">
-              <a href="assets/docs/Dharmana_Lokesh_Resume.pdf" download="Dharmana_Lokesh_Resume.pdf" class="btn btn-primary btn-lg" id="download-resume-main">
-                <i class="fa-solid fa-cloud-arrow-down"></i> Download Resume (PDF)
+            <h2 class="resume-heading">Hiring a 2026 Data Analyst?</h2>
+            <p class="resume-subtext">
+              Access the official, recruiter-verified single-page ATS resume detailing all 4 end-to-end projects, 2 internships, 4 certifications, and database proficiencies.
+            </p>
+
+            <div class="resume-action-buttons">
+              <a href="assets/docs/Dharmana_Lokesh_Resume.pdf" download="Dharmana_Lokesh_Resume.pdf" class="btn btn-primary btn-glow" id="main-resume-download-btn">
+                <i class="fa-solid fa-file-arrow-down"></i>
+                <span>DOWNLOAD RESUME (PDF)</span>
               </a>
-              <button class="btn btn-outline btn-lg" id="preview-resume-btn">
-                <i class="fa-solid fa-eye"></i> Quick Resume Preview
+
+              <button class="btn btn-outline" id="open-resume-modal-btn">
+                <i class="fa-solid fa-eye"></i>
+                <span>QUICK RESUME PREVIEW</span>
               </button>
             </div>
 
-            <div class="resume-file-info">
-              <span><i class="fa-solid fa-circle-check text-accent"></i> Original Resume PDF</span>
-              <span><i class="fa-solid fa-shield-halved text-accent"></i> Recruiter Verified</span>
-              <span><i class="fa-solid fa-bolt text-accent"></i> Single-Page ATS Format</span>
+            <div class="resume-highlights-row">
+              <div class="res-feat">
+                <i class="fa-solid fa-circle-check text-accent"></i>
+                <span>Single-Page ATS Format</span>
+              </div>
+              <div class="res-feat">
+                <i class="fa-solid fa-shield-halved text-accent"></i>
+                <span>100% Resume Accurate</span>
+              </div>
+              <div class="res-feat">
+                <i class="fa-solid fa-clock text-accent"></i>
+                <span>Ready for 2026 Join</span>
+              </div>
             </div>
           </div>
 
-          <div class="resume-thumbnail-wrapper">
-            <div class="resume-sheet">
-              <div class="sheet-header">
-                <div class="sheet-name">DHARMANA LOKESH</div>
-                <div class="sheet-title">Data Analyst | SQL, Python &amp; Power BI</div>
-                <div class="sheet-contact">Srikakulam, AP | 9542959711 | lokeshdarmana@gmail.com</div>
+          <!-- 3D Holographic Resume Preview Card -->
+          <div class="resume-preview-side">
+            <div class="resume-sheet-card tilt-card" data-tilt data-tilt-max="10">
+              <div class="sheet-corner-decor"></div>
+              <div class="sheet-head">
+                <div class="sheet-title-name">DHARMANA LOKESH</div>
+                <div class="sheet-title-sub">Data Analyst | SQL, Python &amp; Power BI</div>
+                <div class="sheet-title-contact">Srikakulam, AP &bull; 9542959711 &bull; lokeshdarmana@gmail.com</div>
               </div>
-              <div class="sheet-line"></div>
-              <div class="sheet-section-title">PROFESSIONAL SUMMARY</div>
-              <div class="sheet-text">2026 B.Tech graduate with hands-on Data Analyst experience through two internships...</div>
-              <div class="sheet-section-title">TECHNICAL SKILLS</div>
-              <div class="sheet-text">Python (Pandas, NumPy, Matplotlib, Seaborn) &bull; SQL &bull; MySQL &bull; Power BI &bull; Excel...</div>
-              <div class="sheet-section-title">PROJECTS</div>
-              <div class="sheet-text">&bull; Amazon Prime Video Content Analysis Dashboard (9,668 titles)</div>
-              <div class="sheet-text">&bull; Indian Banking Transactions Analysis (500+ records, 13 PivotTables)</div>
-              <div class="sheet-text">&bull; Hotel Reservation Operations Analytics (7,045+ MySQL records)</div>
-              <div class="sheet-overlay">
-                <a href="assets/docs/Dharmana_Lokesh_Resume.pdf" download="Dharmana_Lokesh_Resume.pdf" class="sheet-btn">
+              
+              <div class="sheet-divider"></div>
+              
+              <div class="sheet-block">
+                <span class="sheet-section-name">PROFESSIONAL SUMMARY</span>
+                <p class="sheet-p">2026 B.Tech graduate with hands-on Data Analyst experience through two internships and four end-to-end projects spanning SQL, Python, Excel, and Power BI...</p>
+              </div>
+
+              <div class="sheet-block">
+                <span class="sheet-section-name">TECHNICAL SKILLS</span>
+                <p class="sheet-p">Python (Pandas, NumPy, Matplotlib, Seaborn) &bull; SQL, MySQL &bull; Power BI, DAX &bull; Excel PivotTables &bull; AWS (10+ Services)...</p>
+              </div>
+
+              <div class="sheet-block">
+                <span class="sheet-section-name">FEATURED PROJECTS</span>
+                <p class="sheet-p">&bull; Amazon Prime Video Content Analysis (9,668 titles EDA)<br>&bull; Indian Banking Transactions Analysis (500+ records, 13 PivotTables)<br>&bull; Hotel Reservation Operations (7,045+ MySQL records, 30+ queries)</p>
+              </div>
+
+              <div class="sheet-hover-overlay">
+                <a href="assets/docs/Dharmana_Lokesh_Resume.pdf" download="Dharmana_Lokesh_Resume.pdf" class="btn btn-sm btn-primary">
                   <i class="fa-solid fa-download"></i> Download Original PDF
                 </a>
               </div>
             </div>
           </div>
+
         </div>
+
       </div>
     </section>
 
-    <!-- Modal for Resume PDF Preview -->
-    <div id="resume-modal" class="modal" role="dialog" aria-modal="true" aria-label="Resume Preview Modal">
-      <div class="modal-backdrop" id="modal-backdrop"></div>
-      <div class="modal-dialog">
-        <div class="modal-header">
-          <div class="modal-title"><i class="fa-solid fa-file-pdf text-accent"></i> Dharmana Lokesh - Resume Preview</div>
-          <div class="modal-actions">
-            <a href="assets/docs/Dharmana_Lokesh_Resume.pdf" download="Dharmana_Lokesh_Resume.pdf" class="btn btn-sm btn-primary">
-              <i class="fa-solid fa-download"></i> Download
-            </a>
-            <button class="btn-icon modal-close-btn" id="modal-close-btn" aria-label="Close modal">
-              <i class="fa-solid fa-xmark"></i>
-            </button>
-          </div>
-        </div>
-        <div class="modal-body">
-          <iframe src="assets/docs/Dharmana_Lokesh_Resume.pdf" title="Dharmana Lokesh Resume PDF" class="resume-iframe"></iframe>
-        </div>
-      </div>
-    </div>
-
-    <!-- ==================== 9. CONTACT SECTION ==================== -->
+    <!-- ==========================================================================
+         11. CONTACT EXPERIENCE: RECRUITER GATEWAY & TERMINAL
+         ========================================================================== -->
     <section class="section contact-section" id="contact">
       <div class="container">
-        <div class="section-header">
-          <span class="section-subtitle"><i class="fa-solid fa-paper-plane"></i> Get In Touch</span>
-          <h2 class="section-title">Contact Information</h2>
-          <p class="section-desc">Open for 2026 Fresher Data Analyst, Junior Data Analyst, and Business Intelligence opportunities.</p>
-          <div class="section-bar"></div>
+        
+        <div class="section-title-wrap">
+          <div class="section-tag"><i class="fa-solid fa-satellite-dish"></i> INITIATE DIALOGUE // 09</div>
+          <h2 class="section-heading">Connect With Dharmana</h2>
+          <p class="section-lead">"Turning complex telemetry and raw relational data into high-conviction business intelligence and automated decision workflows."</p>
         </div>
 
-        <div class="contact-grid">
+        <div class="contact-terminal-grid">
           
-          <!-- Contact Cards Strip -->
-          <div class="contact-info-col">
+          <!-- Left Column: Direct Recruiter Channels -->
+          <div class="channels-column">
             
-            <!-- Email Item -->
-            <div class="contact-item-card">
-              <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
-              <div class="contact-content">
-                <span class="contact-type">Direct Email</span>
-                <a href="mailto:lokeshdarmana@gmail.com" class="contact-link">lokeshdarmana@gmail.com</a>
-                <span class="contact-hint">Click to send an email</span>
+            <!-- Email Channel -->
+            <div class="channel-card tilt-card" data-tilt>
+              <div class="channel-icon-box"><i class="fa-solid fa-envelope"></i></div>
+              <div class="channel-info">
+                <span class="channel-type">DIRECT EMAIL</span>
+                <a href="mailto:lokeshdarmana@gmail.com" class="channel-main-link">lokeshdarmana@gmail.com</a>
+                <span class="channel-sub">Click to send direct email</span>
               </div>
-              <button class="btn-icon copy-btn" data-copy="lokeshdarmana@gmail.com" title="Copy email address" aria-label="Copy Email">
+              <button class="channel-copy-btn copy-trigger" data-copy="lokeshdarmana@gmail.com" title="Copy Email">
                 <i class="fa-regular fa-copy"></i>
               </button>
             </div>
 
-            <!-- Phone Item -->
-            <div class="contact-item-card">
-              <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
-              <div class="contact-content">
-                <span class="contact-type">Mobile Phone</span>
-                <a href="tel:9542959711" class="contact-link">+91 9542959711</a>
-                <span class="contact-hint">Call / SMS</span>
+            <!-- Phone Channel -->
+            <div class="channel-card tilt-card" data-tilt>
+              <div class="channel-icon-box"><i class="fa-solid fa-phone"></i></div>
+              <div class="channel-info">
+                <span class="channel-type">PHONE / WHATSAPP</span>
+                <a href="tel:9542959711" class="channel-main-link">+91 9542959711</a>
+                <span class="channel-sub">Direct recruiter line</span>
               </div>
-              <button class="btn-icon copy-btn" data-copy="9542959711" title="Copy phone number" aria-label="Copy Phone">
+              <button class="channel-copy-btn copy-trigger" data-copy="9542959711" title="Copy Phone">
                 <i class="fa-regular fa-copy"></i>
               </button>
             </div>
 
-            <!-- Location Item -->
-            <div class="contact-item-card">
-              <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
-              <div class="contact-content">
-                <span class="contact-type">Location</span>
-                <span class="contact-text">Srikakulam, Andhra Pradesh, India</span>
-                <span class="contact-hint">Open to Relocation &amp; Remote</span>
+            <!-- Location Channel -->
+            <div class="channel-card tilt-card" data-tilt>
+              <div class="channel-icon-box"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="channel-info">
+                <span class="channel-type">CURRENT BASE</span>
+                <span class="channel-main-link">Srikakulam, Andhra Pradesh, India</span>
+                <span class="channel-sub">Open to immediate relocation across India &amp; Remote</span>
               </div>
             </div>
 
-            <!-- Social Links Strip -->
-            <div class="contact-item-card social-card">
-              <div class="contact-icon"><i class="fa-solid fa-share-nodes"></i></div>
-              <div class="contact-content">
-                <span class="contact-type">Professional Profiles</span>
-                <div class="profile-links-row">
-                  <a href="https://www.linkedin.com/in/dharmana-lokesh-290396268" target="_blank" rel="noopener noreferrer" class="profile-btn linkedin-btn">
-                    <i class="fa-brands fa-linkedin"></i> LinkedIn
-                  </a>
-                  <a href="https://github.com/Dharmanalokesh" target="_blank" rel="noopener noreferrer" class="profile-btn github-btn">
-                    <i class="fa-brands fa-github"></i> GitHub
-                  </a>
-                </div>
+            <!-- Professional Profiles Strip -->
+            <div class="profiles-strip-card tilt-card" data-tilt>
+              <span class="strip-heading">PROFESSIONAL NETWORKS</span>
+              <div class="strip-buttons">
+                <a href="https://www.linkedin.com/in/dharmana-lokesh-290396268" target="_blank" rel="noopener noreferrer" class="btn btn-outline profile-link-btn" title="LinkedIn Profile">
+                  <i class="fa-brands fa-linkedin-in text-accent"></i>
+                  <span>LinkedIn Profile</span>
+                </a>
+                <a href="https://github.com/Dharmanalokesh" target="_blank" rel="noopener noreferrer" class="btn btn-outline profile-link-btn" title="GitHub Profile">
+                  <i class="fa-brands fa-github text-accent"></i>
+                  <span>GitHub Repositories</span>
+                </a>
               </div>
             </div>
 
           </div>
 
-          <!-- Recruiter Contact Message Form -->
-          <div class="contact-form-col">
-            <div class="form-wrapper">
-              <div class="form-header">
-                <h3><i class="fa-solid fa-envelope-open-text text-accent"></i> Send a Message</h3>
-                <p>Recruiting for a Data Analyst opening? Send a message directly.</p>
+          <!-- Right Column: Recruiter Message Console -->
+          <div class="form-column">
+            <div class="form-terminal-card">
+              <div class="terminal-bar">
+                <span class="term-dot red"></span>
+                <span class="term-dot yellow"></span>
+                <span class="term-dot green"></span>
+                <span class="term-title">recruiter_outreach_terminal.sh</span>
               </div>
+              
+              <div class="form-terminal-body">
+                <p class="form-instruction">Fill out this outreach form to generate a direct formatted email dispatch to Dharmana Lokesh.</p>
+                
+                <form id="recruiter-contact-form" class="cyber-form" novalidate>
+                  
+                  <div class="form-row-2">
+                    <div class="field-wrap">
+                      <label for="form-name">Your Name / Recruiter Name <span class="req">*</span></label>
+                      <div class="input-container">
+                        <i class="fa-solid fa-user field-icon"></i>
+                        <input type="text" id="form-name" name="name" required placeholder="e.g. Sreya Sharma">
+                      </div>
+                    </div>
 
-              <form id="contact-form" class="recruiter-form" novalidate>
-                <div class="form-row">
-                  <div class="form-group">
-                    <label for="sender-name">Your Name / Recruiter Name <span class="required">*</span></label>
-                    <div class="input-wrap">
-                      <i class="fa-solid fa-user input-icon"></i>
-                      <input type="text" id="sender-name" name="name" required placeholder="e.g. Talent Acquisition Partner">
+                    <div class="field-wrap">
+                      <label for="form-company">Company / Organization <span class="req">*</span></label>
+                      <div class="input-container">
+                        <i class="fa-solid fa-building field-icon"></i>
+                        <input type="text" id="form-company" name="company" required placeholder="e.g. Analytics Tech Corp">
+                      </div>
                     </div>
                   </div>
-                  <div class="form-group">
-                    <label for="sender-company">Company / Organization <span class="required">*</span></label>
-                    <div class="input-wrap">
-                      <i class="fa-solid fa-building input-icon"></i>
-                      <input type="text" id="sender-company" name="company" required placeholder="e.g. Analytics Firm">
+
+                  <div class="form-row-2">
+                    <div class="field-wrap">
+                      <label for="form-email">Work Email <span class="req">*</span></label>
+                      <div class="input-container">
+                        <i class="fa-solid fa-envelope field-icon"></i>
+                        <input type="email" id="form-email" name="email" required placeholder="e.g. recruiter@company.com">
+                      </div>
+                    </div>
+
+                    <div class="field-wrap">
+                      <label for="form-role">Target Role</label>
+                      <div class="input-container">
+                        <i class="fa-solid fa-briefcase field-icon"></i>
+                        <input type="text" id="form-role" name="role" placeholder="e.g. Data Analyst (2026 Batch)">
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <div class="form-row">
-                  <div class="form-group">
-                    <label for="sender-email">Work Email <span class="required">*</span></label>
-                    <div class="input-wrap">
-                      <i class="fa-solid fa-envelope input-icon"></i>
-                      <input type="email" id="sender-email" name="email" required placeholder="e.g. recruiter@company.com">
+                  <div class="field-wrap">
+                    <label for="form-message">Message / Opportunity Details <span class="req">*</span></label>
+                    <div class="input-container">
+                      <textarea id="form-message" name="message" rows="4" required placeholder="Share job requirements, interview schedule, or inquiry details..."></textarea>
                     </div>
                   </div>
-                  <div class="form-group">
-                    <label for="job-role">Role Opportunity</label>
-                    <div class="input-wrap">
-                      <i class="fa-solid fa-briefcase input-icon"></i>
-                      <input type="text" id="job-role" name="role" placeholder="e.g. Junior Data Analyst (2026 Batch)">
-                    </div>
-                  </div>
-                </div>
 
-                <div class="form-group">
-                  <label for="sender-message">Message Details <span class="required">*</span></label>
-                  <textarea id="sender-message" name="message" rows="4" required placeholder="Share job requirements, interview schedule, or inquiry..."></textarea>
-                </div>
+                  <button type="submit" class="btn btn-primary btn-block btn-glow submit-dispatch-btn" id="send-btn">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    <span>DISPATCH MESSAGE VIA EMAIL</span>
+                  </button>
+                </form>
 
-                <button type="submit" class="btn btn-primary btn-block submit-btn" id="submit-btn">
-                  <i class="fa-solid fa-paper-plane"></i> Send Direct Email
-                </button>
-              </form>
+              </div>
             </div>
           </div>
 
         </div>
+
       </div>
     </section>
+
   </main>
 
-  <!-- ==================== 10. FOOTER ==================== -->
+  <!-- ==========================================================================
+       FOOTER EXPERIENCE
+       ========================================================================== -->
   <footer class="site-footer">
     <div class="container footer-container">
-      <div class="footer-top">
-        <div class="footer-brand">
+      
+      <div class="footer-top-grid">
+        <div class="footer-brand-side">
           <div class="brand-logo">
-            <div class="logo-mark">DL</div>
-            <div class="logo-text">
-              <span class="logo-name">Dharmana Lokesh</span>
-              <span class="logo-tag">Data Analyst | SQL, Python &amp; Power BI</span>
+            <div class="logo-hologram">
+              <div class="logo-box">DL</div>
+            </div>
+            <div class="logo-meta">
+              <span class="logo-name">DHARMANA LOKESH</span>
+              <span class="logo-role">[ DATA ANALYST ]</span>
             </div>
           </div>
           <p class="footer-tagline">
-            2026 B.Tech graduate delivering decision-ready insights through SQL relational modeling, Python exploratory analysis, and Power BI dashboards.
+            2026 B.Tech graduate in Electronics and Communication Engineering delivering decision-ready insights through SQL relational modeling, Python exploratory data analysis, and Power BI dashboards.
           </p>
         </div>
 
-        <div class="footer-nav-col">
-          <h4 class="footer-col-title">Navigation</h4>
-          <ul class="footer-links">
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#skills">Technical Skills</a></li>
-            <li><a href="#projects">Data Projects</a></li>
+        <div class="footer-col">
+          <h4 class="col-title">Navigation</h4>
+          <ul class="col-links">
+            <li><a href="#about">About Candidate</a></li>
+            <li><a href="#skills">Skills Ecosystem</a></li>
+            <li><a href="#projects">Analytical Projects</a></li>
+            <li><a href="#command-center">Command Center</a></li>
             <li><a href="#experience">Internships</a></li>
             <li><a href="#certifications">Certifications</a></li>
-            <li><a href="#education">Education</a></li>
           </ul>
         </div>
 
-        <div class="footer-nav-col">
-          <h4 class="footer-col-title">Connect &amp; Contact</h4>
-          <ul class="footer-links">
-            <li><a href="https://www.linkedin.com/in/dharmana-lokesh-290396268" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
-            <li><a href="https://github.com/Dharmanalokesh" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a></li>
+        <div class="footer-col">
+          <h4 class="col-title">Verification &amp; Links</h4>
+          <ul class="col-links">
+            <li><a href="assets/docs/Dharmana_Lokesh_Resume.pdf" download="Dharmana_Lokesh_Resume.pdf"><i class="fa-solid fa-file-pdf"></i> Official Resume (PDF)</a></li>
+            <li><a href="https://www.linkedin.com/in/dharmana-lokesh-290396268" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i> LinkedIn Profile</a></li>
+            <li><a href="https://github.com/Dharmanalokesh" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub Repositories</a></li>
             <li><a href="mailto:lokeshdarmana@gmail.com"><i class="fa-solid fa-envelope"></i> lokeshdarmana@gmail.com</a></li>
             <li><a href="tel:9542959711"><i class="fa-solid fa-phone"></i> +91 9542959711</a></li>
-            <li><span class="footer-loc"><i class="fa-solid fa-location-dot"></i> Srikakulam, Andhra Pradesh</span></li>
           </ul>
         </div>
       </div>
 
-      <div class="footer-bottom">
-        <p class="copyright">
-          &copy; 2026 <strong>Dharmana Lokesh</strong>. All rights reserved. Data Analyst Portfolio strictly based on verified credentials.
+      <div class="footer-bottom-bar">
+        <p class="copy-text">
+          &copy; 2026 <strong>Dharmana Lokesh</strong>. All credentials, project metrics, and academic records verified against candidate resume.
         </p>
-        <div class="footer-badges">
-          <span class="tech-badge-subtle"><i class="fa-solid fa-shield-halved"></i> 100% Resume Accurate</span>
-          <span class="tech-badge-subtle"><i class="fa-solid fa-graduation-cap"></i> 2026 Batch</span>
+        <div class="footer-chips">
+          <span class="f-chip"><i class="fa-solid fa-shield-halved text-accent"></i> 100% Resume Accurate</span>
+          <span class="f-chip"><i class="fa-solid fa-graduation-cap text-accent"></i> 2026 Batch Fresher</span>
+          <span class="f-chip"><i class="fa-solid fa-code text-accent"></i> Three.js &bull; Chart.js</span>
         </div>
       </div>
+
     </div>
   </footer>
 
-  <!-- Scroll to Top Floating Button -->
+  <!-- Scroll to Top Button -->
   <button id="scroll-to-top" class="scroll-to-top-btn" aria-label="Scroll back to top" title="Back to top">
     <i class="fa-solid fa-arrow-up"></i>
   </button>
 
-  <!-- Custom Scripts -->
-  <script src="assets/js/main.js"></script>
+  <!-- ==========================================================================
+       MODAL 1: RESUME PDF PREVIEW MODAL
+       ========================================================================== -->
+  <div id="resume-modal" class="cyber-modal" role="dialog" aria-modal="true" aria-label="Official Resume Modal">
+    <div class="modal-backdrop" id="resume-modal-backdrop"></div>
+    <div class="modal-window">
+      <div class="modal-header">
+        <div class="modal-title">
+          <i class="fa-solid fa-file-pdf text-accent"></i>
+          <span>DHARMANA LOKESH — OFFICIAL RESUME</span>
+        </div>
+        <div class="modal-actions">
+          <a href="assets/docs/Dharmana_Lokesh_Resume.pdf" download="Dharmana_Lokesh_Resume.pdf" class="btn btn-sm btn-primary">
+            <i class="fa-solid fa-download"></i> Download PDF
+          </a>
+          <button class="btn-icon modal-close-btn" id="resume-modal-close" aria-label="Close modal">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <iframe data-src="assets/docs/Dharmana_Lokesh_Resume.pdf" src="about:blank" title="Dharmana Lokesh Resume PDF" class="resume-iframe" id="resume-iframe"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL 2: IMMERSIVE PROJECT ANALYTICAL DOSSIER MODAL
+       ========================================================================== -->
+  <div id="project-modal" class="cyber-modal" role="dialog" aria-modal="true" aria-label="Project Analytical Dossier Modal">
+    <div class="modal-backdrop" id="project-modal-backdrop"></div>
+    <div class="modal-window modal-window-lg">
+      <div class="modal-header">
+        <div class="modal-title">
+          <i class="fa-solid fa-cubes text-accent"></i>
+          <span id="modal-project-title">PROJECT ANALYTICAL DOSSIER</span>
+        </div>
+        <div class="modal-actions">
+          <a href="https://github.com/Dharmanalokesh" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline" id="modal-github-btn">
+            <i class="fa-brands fa-github"></i> View GitHub
+          </a>
+          <button class="btn-icon modal-close-btn" id="project-modal-close" aria-label="Close modal">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+      <div class="modal-body" id="project-modal-content">
+        <!-- Dynamically populated via main.js with complete resume project data -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript Engine -->
+  <script src="assets/js/main.js?v=3"></script>
 </body>
 </html>
